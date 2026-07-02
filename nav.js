@@ -2,14 +2,27 @@
 (function () {
     'use strict';
 
-    const path    = window.location.pathname;
-    const match   = path.match(/slide-(\d+)/);
-    const current = match ? parseInt(match[1], 10) : 0;
-    const isRoot  = !match && (path.endsWith('index.html') || path.endsWith('/'));
-    const total   = 35;
+    /* ── Presentation order ──
+       Position (1..total) in the talk  →  actual slide-NN folder on disk.
+       This lets us reorder the narrative without renaming any folder. */
+    const order = [
+        1, 2, 4, 5, 36, 37, 38, 39, 28, 40, 41,
+        24, 25, 26, 27,
+        12, 13, 20, 18, 35, 15, 22,
+        34,
+        30, 31, 42, 32
+    ];
+
+    const path       = window.location.pathname;
+    const match      = path.match(/slide-(\d+)/);
+    const folderNum  = match ? parseInt(match[1], 10) : 0;
+    const current    = folderNum ? (order.indexOf(folderNum) + 1) : 0;
+    const isRoot     = !match && (path.endsWith('index.html') || path.endsWith('/'));
+    const total      = order.length;
 
     function slideUrl(n) {
-        return `slide-${String(n).padStart(2, '0')}/index.html`;
+        const folder = order[n - 1];
+        return `slide-${String(folder).padStart(2, '0')}/index.html`;
     }
 
     function goToSlide(n) {
@@ -28,18 +41,17 @@
     let selectedSlide = current || 1;
 
     const slideTitles = [
-        "Couverture", "Plan",
-        "Section 01 — Organisme d'accueil", "Organisme d'accueil", "Introduction au projet SRTV",
-        "Section 02 — Contexte & Problématique", "Étude de l'existant", "Critique comparative",
-        "Section 03 — Solution SRTV", "Solution Proposée",
-        "Section 04 — Analyse des Besoins", "Analyse et spécification", "Besoins non fonctionnels",
-        "Section 05 — Architecture & Conception", "Méthodologie Scrum", "Plan de découpage", "Diagramme de cas d'utilisation", "Stack Technique & Environnement", "Avantages Microservices", "Architecture du Projet SRTV",
-        "Section 06 — CI / CD & Déploiement", "Pipeline CI / CD SRTV",
-        "Section 07 — Interfaces", "Interface Livestream", "Interface Reels", "Interface Shopping", "Interface Restaurant", "Interface Lina",
-        "Section 08 — Conclusion & Perspectives", "Conclusion", "Perspectives",
-        "Merci",
-        "Section 09 — Démonstration", "Démonstration",
-        "Orchestration d'agents IA (n8n)"
+        "Couverture", "Sommaire",
+        "Organisme d'accueil", "Contexte : opportunité touristique",
+        "Problématique", "Notre solution : SRTV + Lina",
+        "Qu'est-ce que Lina ?", "Ce que Lina sait faire", "Interface Lina",
+        "Lina en action : Briefing proactif", "Lina en action : Réservation taxi",
+        "Interface Livestream", "Interface Reels", "Interface Shopping", "Interface Restaurant",
+        "Analyse et spécification des besoins", "Besoins non fonctionnels",
+        "Architecture du Projet SRTV", "Stack Technique & Environnement",
+        "Orchestration d'agents IA (n8n)", "Méthodologie Scrum", "Pipeline CI / CD SRTV",
+        "Démonstration",
+        "Bilan", "Perspectives", "Vision & Impact", "Merci"
     ];
 
     const overview = document.createElement('div');

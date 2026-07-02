@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ce que Lina sait faire</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+
+        <header class="slide__header">
+            <div class="slide__badge">
+                <span class="slide__badge-dot"></span>
+                <span>Lina en pratique</span>
+            </div>
+            <h1 class="slide__title">Ce que Lina sait faire pour vous</h1>
+            <p class="slide__subtitle">Au-delà de la conversation, Lina agit concrètement pour simplifier le séjour du voyageur, du matin au soir.</p>
+        </header>
+
+        <div class="modules__label">Ses capacités clés</div>
+        <div class="modules__grid">
+            <div class="module__card" data-delay="1">
+                <div class="module__accent module__accent--blue"></div>
+                <div class="module__icon module__icon--blue">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                </div>
+                <h3 class="module__name">Recommandations</h3>
+                <p class="module__desc">Destinations, restaurants et expériences adaptés aux goûts de chacun</p>
+            </div>
+            <div class="module__card" data-delay="2">
+                <div class="module__accent module__accent--purple"></div>
+                <div class="module__icon module__icon--purple">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM4 8l8 5 8-5v2l-8 5-8-5V8z"/></svg>
+                </div>
+                <h3 class="module__name">Itinéraires multi-jours</h3>
+                <p class="module__desc">Un programme structuré jour par jour, tourisme et météo combinés</p>
+            </div>
+            <div class="module__card" data-delay="3">
+                <div class="module__accent module__accent--teal"></div>
+                <div class="module__icon module__icon--teal">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+                </div>
+                <h3 class="module__name">Réservation de taxi</h3>
+                <p class="module__desc">Un trajet demandé en parlant, confirmé et suivi en temps réel</p>
+            </div>
+            <div class="module__card" data-delay="4">
+                <div class="module__accent module__accent--orange"></div>
+                <div class="module__icon module__icon--orange">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                </div>
+                <h3 class="module__name">Briefing proactif</h3>
+                <p class="module__desc">Un message personnalisé matin, midi et soir, sans rien demander</p>
+            </div>
+            <div class="module__card" data-delay="5">
+                <div class="module__accent module__accent--emerald"></div>
+                <div class="module__icon module__icon--emerald">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                </div>
+                <h3 class="module__name">Reçu automatique</h3>
+                <p class="module__desc">Un reçu de course envoyé automatiquement à la fin du trajet</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">08 / 27</span>
+        </div>
+
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

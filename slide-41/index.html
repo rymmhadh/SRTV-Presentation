@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lina en action : Réservation taxi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+
+        <header class="slide__header">
+            <div class="slide__badge">
+                <span class="slide__badge-dot"></span>
+                <span>Lina en action</span>
+            </div>
+            <h1 class="slide__title">Un taxi, juste en en parlant</h1>
+            <p class="slide__subtitle">Plus besoin d'app dédiée ni d'appel : le voyageur demande un taxi à Lina, en langage naturel, et elle s'occupe de tout.</p>
+        </header>
+
+        <div class="modules__grid">
+            <div class="module__card" data-delay="1">
+                <div class="module__accent module__accent--emerald"></div>
+                <div class="module__icon module__icon--emerald">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                </div>
+                <h3 class="module__name">1. La demande</h3>
+                <p class="module__desc">Le voyageur demande simplement à Lina de lui trouver un taxi</p>
+            </div>
+            <div class="module__card" data-delay="2">
+                <div class="module__accent module__accent--blue"></div>
+                <div class="module__icon module__icon--blue">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                </div>
+                <h3 class="module__name">2. Recherche chauffeur</h3>
+                <p class="module__desc">Lina trouve un chauffeur disponible en ligne à proximité</p>
+            </div>
+            <div class="module__card" data-delay="3">
+                <div class="module__accent module__accent--indigo"></div>
+                <div class="module__icon module__icon--indigo">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                </div>
+                <h3 class="module__name">3. Confirmation</h3>
+                <p class="module__desc">Une confirmation vocale claire, avant toute réservation ferme</p>
+            </div>
+            <div class="module__card" data-delay="4">
+                <div class="module__accent module__accent--orange"></div>
+                <div class="module__icon module__icon--orange">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg>
+                </div>
+                <h3 class="module__name">4. Suivi temps réel</h3>
+                <p class="module__desc">Position du chauffeur suivie en direct jusqu'à l'arrivée</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">11 / 27</span>
+        </div>
+
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qu'est-ce que Lina ?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+
+        <header class="slide__header">
+            <div class="slide__badge">
+                <span class="slide__badge-dot"></span>
+                <span>Lina, l'agent IA de SRTV</span>
+            </div>
+            <h1 class="slide__title">Un compagnon de voyage intelligent, disponible 24/7</h1>
+            <p class="slide__subtitle">Lina n'est pas un simple chatbot : c'est un guide touristique virtuel qui apprend les goûts du voyageur, et l'accompagne du premier message jusqu'à la fin de son séjour.</p>
+        </header>
+
+        <div class="hub" data-delay="0">
+            <img class="hub__logo-img" src="../assets/logosrtv.png" alt="Lina">
+        </div>
+
+        <div class="modules__grid">
+            <div class="module__card" data-delay="1">
+                <div class="module__accent module__accent--emerald"></div>
+                <div class="module__icon module__icon--emerald">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <h3 class="module__name">Guide personnalisé</h3>
+                <p class="module__desc">Elle retient les préférences, la ville, les habitudes de chaque voyageur pour des recommandations sur-mesure</p>
+            </div>
+            <div class="module__card" data-delay="2">
+                <div class="module__accent module__accent--blue"></div>
+                <div class="module__icon module__icon--blue">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                </div>
+                <h3 class="module__name">Disponible partout</h3>
+                <p class="module__desc">Accessible sur le web comme sur mobile, toujours à portée de main pendant le voyage</p>
+            </div>
+            <div class="module__card" data-delay="3">
+                <div class="module__accent module__accent--indigo"></div>
+                <div class="module__icon module__icon--indigo">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                </div>
+                <h3 class="module__name">Toujours à l'écoute</h3>
+                <p class="module__desc">On lui parle naturellement, comme à un ami qui connaît la région sur le bout des doigts</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">07 / 27</span>
+        </div>
+
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>
