@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 12 : Avantages Microservices</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+        <header class="slide__header">
+            <h1 class="slide__title">Avantages de l'architecture microservices</h1>
+            <p class="slide__subtitle">Pourquoi SRTV adopte une architecture dÃ©composÃ©e</p>
+        </header>
+
+        <div class="content-wrapper">
+            <!-- Left: Diagram from rapport -->
+            <div class="diagram-panel" data-delay="2">
+                <div class="diagram-frame">
+                    <img src="../monolith_vs_micro.png" alt="Architecture monolithique vs microservices" class="diagram-img">
+                    <span class="diagram-caption">Monolithe vs Microservices</span>
+                </div>
+            </div>
+
+            <!-- Right: Advantages as bullet points -->
+            <div class="advantages-panel" data-delay="3">
+                <div class="adv-card" data-delay="0">
+                    <div class="adv-header">
+                        <div class="adv-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4m0 12v4m4.24-15.76l-2.83 2.83M10.59 13.41l-2.83 2.83M22 12h-4m-12 0H2m15.76 4.24l-2.83-2.83M10.59 10.59L7.76 7.76"/></svg>
+                        </div>
+                        <h3 class="adv-title">ScalabilitÃ© indÃ©pendante</h3>
+                    </div>
+                    <ul class="adv-bullets">
+                        <li><span class="bullet-dot"></span>ScalabilitÃ© sÃ©lective par service selon la charge</li>
+                        <li><span class="bullet-dot"></span>RÃ©plication ciblÃ©e (ex. livestream-service)</li>
+                    </ul>
+                </div>
+
+                <div class="adv-card" data-delay="1">
+                    <div class="adv-header">
+                        <div class="adv-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9"/></svg>
+                        </div>
+                        <h3 class="adv-title">DÃ©ploiement continu</h3>
+                    </div>
+                    <ul class="adv-bullets">
+                        <li><span class="bullet-dot"></span>DÃ©ploiement indÃ©pendant sans redÃ©marrage global</li>
+                        <li><span class="bullet-dot"></span>Pipeline Jenkins + Docker Compose automatisÃ©</li>
+                    </ul>
+                </div>
+
+                <div class="adv-card adv-card--highlight" data-delay="2">
+                    <div class="adv-header">
+                        <div class="adv-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="adv-title">Couplage faible & RÃ©silience</h3>
+                    </div>
+                    <ul class="adv-bullets">
+                        <li><span class="bullet-dot"></span>Couplage faible entre services via API REST</li>
+                        <li><span class="bullet-dot"></span>TolÃ©rance aux pannes : un service en panne n'arrÃªte pas la plateforme</li>
+                        <li><span class="bullet-dot"></span>Kafka assure la communication asynchrone</li>
+                    </ul>
+                </div>
+
+                <div class="adv-card" data-delay="3">
+                    <div class="adv-header">
+                        <div class="adv-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        </div>
+                        <h3 class="adv-title">Avantages techniques</h3>
+                    </div>
+                    <ul class="adv-bullets">
+                        <li><span class="bullet-dot"></span>Polyglotte : NestJS, Python, React selon le besoin</li>
+                        <li><span class="bullet-dot"></span>MaintenabilitÃ© simplifiÃ©e par codebase rÃ©duite</li>
+                        <li><span class="bullet-dot"></span>Ã‰quipes autonomes de bout en bout</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">19 / 34</span>
+        </div>
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

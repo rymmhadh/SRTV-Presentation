@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 10 : Plan de dÃ©coupage par releases</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+        <header class="slide__header">
+            <span class="slide__eyebrow">Planning</span>
+            <h1 class="slide__title">Plan de dÃ©coupage</h1>
+            <p class="slide__subtitle">Releases et microservices SRTV</p>
+        </header>
+
+        <div class="roadmap" data-delay="0">
+            <div class="release-lane" data-delay="1">
+                <div class="lane__header">
+                    <span class="release__badge release__badge--1">Release 1</span>
+                </div>
+                <div class="lane__sprints">
+                    <div class="sprint-card sprint-card--1" data-delay="2">
+                        <span class="sprint-card__num">1</span>
+                        <span class="sprint-card__label">Sprint 1</span>
+                        <span class="sprint-card__service">user-service</span>
+                    </div>
+                    <div class="sprint-card sprint-card--1" data-delay="3">
+                        <span class="sprint-card__num">2</span>
+                        <span class="sprint-card__label">Sprint 2</span>
+                        <span class="sprint-card__service">reel-service</span>
+                    </div>
+                    <div class="sprint-card sprint-card--1" data-delay="4">
+                        <span class="sprint-card__num">3</span>
+                        <span class="sprint-card__label">Sprint 3</span>
+                        <span class="sprint-card__service">livestream-service</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="release-lane" data-delay="5">
+                <div class="lane__header">
+                    <span class="release__badge release__badge--2">Release 2</span>
+                </div>
+                <div class="lane__sprints">
+                    <div class="sprint-card sprint-card--2" data-delay="6">
+                        <span class="sprint-card__num">4</span>
+                        <span class="sprint-card__label">Sprint 4</span>
+                        <span class="sprint-card__service">tourism-service</span>
+                    </div>
+                    <div class="sprint-card sprint-card--2" data-delay="7">
+                        <span class="sprint-card__num">5</span>
+                        <span class="sprint-card__label">Sprint 5</span>
+                        <span class="sprint-card__service">taxi-service</span>
+                    </div>
+                    <div class="sprint-card sprint-card--2" data-delay="8">
+                        <span class="sprint-card__num">6</span>
+                        <span class="sprint-card__label">Sprint 6</span>
+                        <span class="sprint-card__service">lina-service</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">16 / 34</span>
+        </div>
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

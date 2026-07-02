@@ -1,0 +1,9 @@
+# Vercel (config locale liee a ton compte, pas a versionner)
+.vercel/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Deno / node au cas ou des deps locales sont installees
+node_modules/

@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 09 : MÃ©thodologie Scrum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+        <header class="slide__header">
+            <h1 class="slide__title">MÃ©thodologie de gestion du projet</h1>
+            <p class="slide__subtitle">Comparaison et sÃ©lection de l'approche adaptÃ©e Ã  SRTV</p>
+        </header>
+
+        <div class="content-split">
+            <!-- Left: Methodology cards -->
+            <div class="methodo-grid">
+                <div class="methodo-card" data-delay="0">
+                    <div class="methodo-badge">MÃ©thode Agile</div>
+                    <h3 class="methodo-name">Extreme Programming</h3>
+                    <div class="methodo-procon">
+                        <div class="procon-item procon-pro"><span class="procon-dot"></span>ItÃ©ratif et incrÃ©mental</div>
+                        <div class="procon-item procon-pro"><span class="procon-dot"></span>Tests en continu</div>
+                        <div class="procon-item procon-con"><span class="procon-dot"></span>Documentation minime</div>
+                        <div class="procon-item procon-con"><span class="procon-dot"></span>Exigeante en ressources</div>
+                    </div>
+                </div>
+
+                <div class="methodo-card" data-delay="1">
+                    <div class="methodo-badge">Processus lourd</div>
+                    <h3 class="methodo-name">RUP</h3>
+                    <div class="methodo-procon">
+                        <div class="procon-item procon-pro"><span class="procon-dot"></span>Cadre structurÃ© (IBM)</div>
+                        <div class="procon-item procon-pro"><span class="procon-dot"></span>Phases bien dÃ©finies</div>
+                        <div class="procon-item procon-con"><span class="procon-dot"></span>Complexe et lourd</div>
+                        <div class="procon-item procon-con"><span class="procon-dot"></span>Peu adaptÃ© aux petites Ã©quipes</div>
+                    </div>
+                </div>
+
+                <div class="methodo-card" data-delay="2">
+                    <div class="methodo-badge">Cycle en Y</div>
+                    <h3 class="methodo-name">2TUP</h3>
+                    <div class="methodo-procon">
+                        <div class="procon-item procon-pro"><span class="procon-dot"></span>Fonctionnel + technique</div>
+                        <div class="procon-item procon-pro"><span class="procon-dot"></span>ModÃ©lisation robuste</div>
+                        <div class="procon-item procon-con"><span class="procon-dot"></span>Processus rigide</div>
+                        <div class="procon-item procon-con"><span class="procon-dot"></span>Long Ã  mettre en Å“uvre</div>
+                    </div>
+                </div>
+
+                <div class="methodo-card methodo-card--selected" data-delay="3">
+                    <div class="methodo-ribbon">SÃ©lectionnÃ©e</div>
+                    <div class="methodo-badge methodo-badge--selected">MÃ©thode Agile</div>
+                    <h3 class="methodo-name">Scrum</h3>
+                    <div class="methodo-procon">
+                        <div class="procon-item procon-pro"><span class="procon-dot"></span>ItÃ©ratif par sprints</div>
+                        <div class="procon-item procon-pro"><span class="procon-dot"></span>PrioritÃ©s adaptables</div>
+                        <div class="procon-item procon-pro"><span class="procon-dot"></span>Rapide et souple</div>
+                        <div class="procon-item procon-pro"><span class="procon-dot"></span>RÃ©sultat conforme aux attentes</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Scrum visual -->
+            <div class="scrum-visual" data-delay="4">
+                <div class="scrum-cycle">
+                    <div class="cycle-center">
+                        <span class="cycle-label">Sprint</span>
+                        <span class="cycle-duration">2 - 4 semaines</span>
+                    </div>
+                    <div class="cycle-step" style="--angle: 0deg;">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg>
+                        </div>
+                        <span class="step-label">Backlog</span>
+                    </div>
+                    <div class="cycle-step" style="--angle: 60deg;">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <span class="step-label">Planification</span>
+                    </div>
+                    <div class="cycle-step" style="--angle: 120deg;">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                        </div>
+                        <span class="step-label">DÃ©veloppement</span>
+                    </div>
+                    <div class="cycle-step" style="--angle: 180deg;">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </div>
+                        <span class="step-label">Review</span>
+                    </div>
+                    <div class="cycle-step" style="--angle: 240deg;">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <span class="step-label">RÃ©trospective</span>
+                    </div>
+                    <div class="cycle-step" style="--angle: 300deg;">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <span class="step-label">DÃ©ploiement</span>
+                    </div>
+                    <svg class="cycle-ring" viewBox="0 0 200 200">
+                        <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(16,185,129,0.15)" stroke-width="3" stroke-dasharray="8 6"/>
+                        <circle cx="100" cy="100" r="85" fill="none" stroke="url(#ringGrad)" stroke-width="4" stroke-linecap="round" stroke-dasharray="120 534" transform="rotate(-90 100 100)">
+                            <animateTransform attributeName="transform" type="rotate" from="-90 100 100" to="270 100 100" dur="8s" repeatCount="indefinite"/>
+                        </circle>
+                        <defs>
+                            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#10b981"/>
+                                <stop offset="100%" stop-color="#3b82f6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">15 / 34</span>
+        </div>
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

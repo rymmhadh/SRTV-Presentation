@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 35 : Orchestration d'agents n8n</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+        <header class="slide__header">
+            <span class="slide__eyebrow">LINA &mdash; Orchestration</span>
+            <h1 class="slide__title">Agents intelligents &amp; automatisation (n8n)</h1>
+            <p class="slide__subtitle">6 workflows n8n orchestrant Claude et les microservices SRTV</p>
+        </header>
+
+        <div class="workflow-grid">
+
+            <div class="wf-card wf-card--hero" data-delay="1">
+                <span class="wf-card__badge">Nouveau</span>
+                <div class="wf-card__thumb">
+                    <img src="../Workflows/workflow-briefing.png" alt="Workflow n8n Briefing proactif">
+                </div>
+                <div class="wf-card__meta">
+                    <span class="wf-card__tag wf-card__tag--agent">Agent</span>
+                    <h3 class="wf-card__title">Briefing proactif</h3>
+                    <p class="wf-card__desc">3 cr&eacute;neaux / jour (8h &middot; 13h &middot; 19h) &mdash; message personnalis&eacute; par utilisateur, m&eacute;moire des lieux/plats aim&eacute;s + m&eacute;t&eacute;o</p>
+                </div>
+            </div>
+
+            <div class="wf-card" data-delay="2">
+                <div class="wf-card__thumb">
+                    <img src="../Workflows/workflow-itineraire.png" alt="Workflow n8n Itin&eacute;raire multi-jours">
+                </div>
+                <div class="wf-card__meta">
+                    <span class="wf-card__tag wf-card__tag--agent">Agent</span>
+                    <h3 class="wf-card__title">Itin&eacute;raire multi-jours</h3>
+                    <p class="wf-card__desc">Tourisme + m&eacute;t&eacute;o + mobilit&eacute; &rarr; programme structur&eacute; jour par jour</p>
+                </div>
+            </div>
+
+            <div class="wf-card" data-delay="3">
+                <div class="wf-card__thumb">
+                    <img src="../Workflows/workflow-taxi.png" alt="Workflow n8n R&eacute;servation taxi">
+                </div>
+                <div class="wf-card__meta">
+                    <span class="wf-card__tag wf-card__tag--agent">Agent</span>
+                    <h3 class="wf-card__title">R&eacute;servation taxi</h3>
+                    <p class="wf-card__desc">Chauffeurs en ligne &rarr; cr&eacute;ation de course &rarr; confirmation vocale par Claude</p>
+                </div>
+            </div>
+
+            <div class="wf-card" data-delay="4">
+                <div class="wf-card__thumb">
+                    <img src="../Workflows/workflow-recu-course.png" alt="Workflow n8n Re&ccedil;u de course SMTP">
+                </div>
+                <div class="wf-card__meta">
+                    <span class="wf-card__tag wf-card__tag--agent">Agent</span>
+                    <h3 class="wf-card__title">Re&ccedil;u de course</h3>
+                    <p class="wf-card__desc">Fin de course &rarr; e-mail r&eacute;capitulatif r&eacute;dig&eacute; par Claude, envoy&eacute; par SMTP</p>
+                </div>
+            </div>
+
+            <div class="wf-card" data-delay="5">
+                <div class="wf-card__thumb">
+                    <img src="../Workflows/workflow-notif-chauffeur.png" alt="Workflow n8n Notification chauffeur">
+                </div>
+                <div class="wf-card__meta">
+                    <span class="wf-card__tag wf-card__tag--notif">Notification</span>
+                    <h3 class="wf-card__title">Notification chauffeur</h3>
+                    <p class="wf-card__desc">Demande de course &rarr; push Expo temps r&eacute;el au chauffeur</p>
+                </div>
+            </div>
+
+            <div class="wf-card" data-delay="6">
+                <div class="wf-card__thumb">
+                    <img src="../Workflows/workflow-notif-passager.png" alt="Workflow n8n Notification passager">
+                </div>
+                <div class="wf-card__meta">
+                    <span class="wf-card__tag wf-card__tag--notif">Notification</span>
+                    <h3 class="wf-card__title">Notification passager</h3>
+                    <p class="wf-card__desc">Acceptation de course &rarr; push Expo temps r&eacute;el au passager</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">35 / 35</span>
+        </div>
+    </div>
+
+    <!-- Full-page Image Gallery -->
+    <div class="gallery" id="gallery">
+        <div class="gallery__backdrop"></div>
+        <div class="gallery__stage">
+            <img class="gallery__img" src="../Workflows/workflow-briefing.png" alt="Workflow n8n Briefing proactif">
+            <img class="gallery__img" src="../Workflows/workflow-itineraire.png" alt="Workflow n8n Itin&eacute;raire multi-jours">
+            <img class="gallery__img" src="../Workflows/workflow-taxi.png" alt="Workflow n8n R&eacute;servation taxi">
+            <img class="gallery__img" src="../Workflows/workflow-recu-course.png" alt="Workflow n8n Re&ccedil;u de course SMTP">
+            <img class="gallery__img" src="../Workflows/workflow-notif-chauffeur.png" alt="Workflow n8n Notification chauffeur">
+            <img class="gallery__img" src="../Workflows/workflow-notif-passager.png" alt="Workflow n8n Notification passager">
+        </div>
+
+        <div class="gallery__controls">
+            <button class="gallery__arrow gallery__arrow--left" id="gallery-prev" aria-label="Image pr&eacute;c&eacute;dente">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="gallery__meta">
+                <span class="gallery__counter" id="gallery-counter">1 / 6</span>
+                <div class="gallery__progress"><div class="gallery__progress-fill" id="gallery-progress"></div></div>
+            </div>
+            <button class="gallery__arrow gallery__arrow--right" id="gallery-next" aria-label="Image suivante">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div>
+
+        <button class="gallery__close" id="gallery-close" aria-label="Fermer la galerie">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

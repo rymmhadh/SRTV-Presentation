@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "document-to-narration": {
+      "source": "jwynia/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/education/document-to-narration/SKILL.md",
+      "computedHash": "60a0f793b8ea83d6a1164513307d8a218e90a7af5aadba534e4bf02e065ca0a2"
+    }
+  }
+}

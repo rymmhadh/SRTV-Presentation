@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 02 : Plan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="plan">
+        <header class="plan__header">
+            <h1 class="plan__title">Plan de la Pr&eacute;sentation</h1>
+        </header>
+
+        <!-- Subtle row connector -->
+        <div class="plan__connector" aria-hidden="true">
+            <div class="plan__connector-line"></div>
+        </div>
+
+        <div class="plan__grid">
+    <div class="plan__card" data-index="1">
+        <div class="plan__badge plan__badge--blue">1</div>
+        <div class="plan__strip plan__strip--blue"></div>
+        <h3 class="plan__card-title">Introduction</h3>
+    </div>
+    <div class="plan__card" data-index="2">
+        <div class="plan__badge plan__badge--indigo">2</div>
+        <div class="plan__strip plan__strip--indigo"></div>
+        <h3 class="plan__card-title">Contexte &amp; Probl&eacute;matique</h3>
+    </div>
+    <div class="plan__card" data-index="3">
+        <div class="plan__badge plan__badge--violet">3</div>
+        <div class="plan__strip plan__strip--violet"></div>
+        <h3 class="plan__card-title">Analyse des Besoins</h3>
+    </div>
+    <div class="plan__card" data-index="4">
+        <div class="plan__badge plan__badge--pink">4</div>
+        <div class="plan__strip plan__strip--pink"></div>
+        <h3 class="plan__card-title">Solution SRTV</h3>
+    </div>
+    <div class="plan__card" data-index="5">
+        <div class="plan__badge plan__badge--cyan">5</div>
+        <div class="plan__strip plan__strip--cyan"></div>
+        <h3 class="plan__card-title">Architecture &amp; Conception</h3>
+    </div>
+    <div class="plan__card" data-index="6">
+        <div class="plan__badge plan__badge--emerald">6</div>
+        <div class="plan__strip plan__strip--emerald"></div>
+        <h3 class="plan__card-title">Interfaces</h3>
+    </div>
+    <div class="plan__card" data-index="7">
+        <div class="plan__badge plan__badge--orange">7</div>
+        <div class="plan__strip plan__strip--orange"></div>
+        <h3 class="plan__card-title">CI / CD &amp; D&eacute;ploiement</h3>
+    </div>
+    <div class="plan__card" data-index="8">
+        <div class="plan__badge plan__badge--rose">8</div>
+        <div class="plan__strip plan__strip--rose"></div>
+        <h3 class="plan__card-title">Conclusion &amp; Perspectives</h3>
+    </div>
+    <div class="plan__card" data-index="9">
+        <div class="plan__badge plan__badge--amber">9</div>
+        <div class="plan__strip plan__strip--amber"></div>
+        <h3 class="plan__card-title">D&eacute;monstration</h3>
+    </div>
+</div>
+
+        <div class="navigation">
+            <span class="nav-year">02 / 34</span>
+        </div>
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

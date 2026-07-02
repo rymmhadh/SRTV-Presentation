@@ -1,0 +1,178 @@
+/* Global black, white and orange theme overrides */
+:root {
+    --theme-white: #ffffff;
+    --theme-soft: #f7f4ef;
+    --theme-ink: #111111;
+    --theme-muted: #5c5c5c;
+    --theme-line: rgba(17, 17, 17, 0.14);
+    --theme-orange: #f26a21;
+    --theme-orange-dark: #c74812;
+    --theme-shadow: 0 18px 52px rgba(17, 17, 17, 0.10);
+}
+
+html,
+body {
+    background:
+        radial-gradient(circle at 88% 12%, rgba(242, 106, 33, 0.14), transparent 30%),
+        linear-gradient(135deg, var(--theme-white) 0%, var(--theme-soft) 100%) !important;
+    color: var(--theme-ink) !important;
+}
+
+#bg-canvas {
+    opacity: 0.22 !important;
+    filter: grayscale(1) sepia(0.3) saturate(1.7) hue-rotate(340deg) !important;
+}
+
+.ambient-orb {
+    display: none !important;
+}
+
+.cover__header {
+    grid-template-columns: 1fr 1fr !important;
+}
+
+.cover__logo-wrap--right {
+    justify-self: end !important;
+}
+
+.cover__title,
+.plan__title,
+.slide__title,
+.demo-title,
+.merci-title,
+h1,
+h2,
+h3 {
+    color: var(--theme-ink) !important;
+    letter-spacing: 0 !important;
+}
+
+.cover__title-accent,
+.cover__author-name,
+.nav-current,
+.nav-year-label,
+.plan__tag,
+.slide__tag,
+.section-tag,
+.eyebrow,
+.kicker,
+.accent,
+.highlight {
+    color: var(--theme-orange) !important;
+    background: none !important;
+    -webkit-text-fill-color: currentColor !important;
+}
+
+.cover__brandmark-ring,
+.info-bar,
+.plan__card,
+.module,
+.card,
+.stat-card,
+.metric-card,
+.timeline__item,
+.sprint-card,
+.feature-card,
+.glass,
+.panel,
+.browser,
+.mobile-frame,
+.phone-frame,
+.screen-card,
+.gallery__panel {
+    background: rgba(255, 255, 255, 0.88) !important;
+    border-color: var(--theme-line) !important;
+    box-shadow: var(--theme-shadow) !important;
+}
+
+.cover__brandmark-ring {
+    border: 2px solid rgba(242, 106, 33, 0.22) !important;
+}
+
+.info-chip__label,
+.plan__card-desc,
+.nav-total,
+.nav-sep,
+p,
+li,
+small {
+    color: var(--theme-muted) !important;
+}
+
+.info-chip__value,
+.plan__card-title,
+.module__name,
+.stat-card__value,
+.metric-card__value,
+.sprint-card__service {
+    color: var(--theme-ink) !important;
+}
+
+.info-chip__accent,
+.info-chip__accent--blue,
+.info-chip__accent--indigo,
+.info-chip__accent--violet,
+.plan__strip,
+.plan__strip--blue,
+.plan__strip--indigo,
+.plan__strip--violet,
+.plan__strip--pink,
+.plan__strip--cyan,
+.plan__strip--emerald,
+.plan__strip--orange,
+.plan__strip--rose,
+.plan__strip--amber,
+.progress-fill,
+.timeline__dot,
+.bullet-dot {
+    background: linear-gradient(90deg, var(--theme-orange-dark), var(--theme-orange)) !important;
+}
+
+.plan__badge,
+.plan__badge--blue,
+.plan__badge--indigo,
+.plan__badge--violet,
+.plan__badge--pink,
+.plan__badge--cyan,
+.plan__badge--emerald,
+.plan__badge--orange,
+.plan__badge--rose,
+.plan__badge--amber,
+.icon,
+.module__icon,
+.feature-icon,
+.org__pillar-icon {
+    background: var(--theme-ink) !important;
+    color: var(--theme-white) !important;
+    border-color: var(--theme-orange) !important;
+}
+
+.plan__connector-line,
+.info-divider {
+    background: linear-gradient(90deg, transparent, rgba(242, 106, 33, 0.38), transparent) !important;
+}
+
+.nav-year {
+    background: rgba(255, 255, 255, 0.94) !important;
+    border-color: rgba(242, 106, 33, 0.24) !important;
+    color: var(--theme-ink) !important;
+}
+
+#srtv-progress {
+    background: linear-gradient(90deg, var(--theme-ink), var(--theme-orange)) !important;
+}
+
+a,
+button,
+.btn,
+.control,
+.gallery__btn {
+    color: var(--theme-orange) !important;
+}
+
+button,
+.btn,
+.control,
+.gallery__btn {
+    border-color: rgba(242, 106, 33, 0.35) !important;
+}

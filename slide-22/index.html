@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 22 : CI/CD Pipeline SRTV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+
+    <div class="slide">
+        <!-- â”€â”€ Header â”€â”€ -->
+        <header class="slide__header">
+            <span class="slide__eyebrow">DevOps</span>
+            <h1 class="slide__title">Pipeline CI / CD SRTV</h1>
+            <p class="slide__subtitle">De Git au VPS : dÃ©ploiement continu des microservices</p>
+        </header>
+
+        <!-- â•â• Pipeline diagram â•â• -->
+        <div class="pipeline" id="pipeline">
+
+            <!-- Lane label CI -->
+            <div class="lane-label lane-label--ci">
+                <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>
+                IntÃ©gration continue (CI)
+            </div>
+
+            <!-- ROW 1: CI -->
+            <div class="pipe-row">
+                <div class="pipe-node pipe-node--ci">
+                    <div class="pipe-node__badge pipe-node__badge--blue">
+                        <img src="../assets/gitlab-logo.png" alt="Git">
+                    </div>
+                    <div class="pipe-node__label">Git Push</div>
+                    <div class="pipe-node__sub">Code source</div>
+                </div>
+                <div class="pipe-arrow pipe-arrow--blue">
+                    <svg viewBox="0 0 52 20" fill="none"><defs><filter id="glow-b"><feGaussianBlur stdDeviation="1.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M2 10 H40" stroke="currentColor" stroke-width="2" stroke-linecap="round" filter="url(#glow-b)"/><path d="M36 5 L50 10 L36 15" fill="currentColor" filter="url(#glow-b)"/></svg>
+                    <span class="dot"></span>
+                </div>
+                <div class="pipe-node pipe-node--ci">
+                    <div class="pipe-node__badge pipe-node__badge--orange">
+                        <img src="../assets/jenkins-logo.png" alt="Jenkins">
+                    </div>
+                    <div class="pipe-node__label">Jenkins</div>
+                    <div class="pipe-node__sub">Build + Tests</div>
+                </div>
+                <div class="pipe-arrow pipe-arrow--blue">
+                    <svg viewBox="0 0 52 20" fill="none"><path d="M2 10 H40" stroke="currentColor" stroke-width="2" stroke-linecap="round" filter="url(#glow-b)"/><path d="M36 5 L50 10 L36 15" fill="currentColor" filter="url(#glow-b)"/></svg>
+                    <span class="dot"></span>
+                </div>
+                <div class="pipe-node pipe-node--ci">
+                    <div class="pipe-node__badge pipe-node__badge--blue">
+                        <img src="../assets/docker-logo.png" alt="Docker Build">
+                    </div>
+                    <div class="pipe-node__label">Docker Build</div>
+                    <div class="pipe-node__sub">7 images</div>
+                </div>
+                <div class="pipe-arrow pipe-arrow--blue">
+                    <svg viewBox="0 0 52 20" fill="none"><path d="M2 10 H40" stroke="currentColor" stroke-width="2" stroke-linecap="round" filter="url(#glow-b)"/><path d="M36 5 L50 10 L36 15" fill="currentColor" filter="url(#glow-b)"/></svg>
+                    <span class="dot"></span>
+                </div>
+                <div class="pipe-node pipe-node--ci">
+                    <div class="pipe-node__badge pipe-node__badge--blue">
+                        <img src="../assets/docker-logo.png" alt="Docker Push">
+                    </div>
+                    <div class="pipe-node__label">Docker Push</div>
+                    <div class="pipe-node__sub">Vers Docker Hub</div>
+                </div>
+                <div class="pipe-arrow pipe-arrow--blue">
+                    <svg viewBox="0 0 52 20" fill="none"><path d="M2 10 H40" stroke="currentColor" stroke-width="2" stroke-linecap="round" filter="url(#glow-b)"/><path d="M36 5 L50 10 L36 15" fill="currentColor" filter="url(#glow-b)"/></svg>
+                    <span class="dot"></span>
+                </div>
+                <div class="pipe-node pipe-node--hub">
+                    <div class="pipe-node__badge pipe-node__badge--amber">
+                        <img src="../assets/docker-logo.png" alt="Docker Hub">
+                    </div>
+                    <div class="pipe-node__label">Docker Hub</div>
+                    <div class="pipe-node__sub">Registry d'images</div>
+                </div>
+            </div><!-- /row1 -->
+
+            <!-- Connector: Docker Hub â†’ VPS â†’ Docker Pull -->
+            <div class="connector-vps">
+                <div class="connector-vps__v"></div>
+                <div class="connector-vps__top">
+                    <div class="connector-vps__h connector-vps__h--right"></div>
+                </div>
+
+                <!-- ROW 2: VPS (centered) -->
+                <div class="pipe-row pipe-row--center connector-vps__middle">
+                    <div class="pipe-node pipe-node--vps">
+                        <div class="pipe-node__badge pipe-node__badge--purple">
+                            <img src="../assets/hostinger-logo.png" alt="Hostinger">
+                        </div>
+                        <div class="pipe-node__label">VPS Hostinger</div>
+                        <div class="pipe-node__sub">Ubuntu 22.04 Â· 4 vCPU Â· 16 Go</div>
+                    </div>
+                </div>
+
+                <div class="connector-vps__bottom">
+                    <div class="connector-vps__h connector-vps__h--left"></div>
+                </div>
+            </div>
+
+            <!-- Lane label CD -->
+            <div class="lane-label lane-label--cd">
+                <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>
+                DÃ©ploiement continu (CD)
+            </div>
+
+            <!-- ROW 3: CD -->
+            <div class="pipe-row">
+                <div class="pipe-node pipe-node--cd">
+                    <div class="pipe-node__badge pipe-node__badge--blue">
+                        <img src="../assets/docker-logo.png" alt="Docker Pull">
+                    </div>
+                    <div class="pipe-node__label">Docker Pull</div>
+                    <div class="pipe-node__sub">Depuis Docker Hub</div>
+                </div>
+                <div class="pipe-arrow pipe-arrow--green">
+                    <svg viewBox="0 0 52 20" fill="none"><defs><filter id="glow-g"><feGaussianBlur stdDeviation="1.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M2 10 H40" stroke="currentColor" stroke-width="2" stroke-linecap="round" filter="url(#glow-g)"/><path d="M36 5 L50 10 L36 15" fill="currentColor" filter="url(#glow-g)"/></svg>
+                    <span class="dot"></span>
+                </div>
+                <div class="pipe-node pipe-node--cd">
+                    <div class="pipe-node__badge pipe-node__badge--blue">
+                        <img src="../assets/docker-logo.png" alt="Compose Up">
+                    </div>
+                    <div class="pipe-node__label">Compose Up</div>
+                    <div class="pipe-node__sub">Orchestration</div>
+                </div>
+                <div class="pipe-arrow pipe-arrow--green">
+                    <svg viewBox="0 0 52 20" fill="none"><path d="M2 10 H40" stroke="currentColor" stroke-width="2" stroke-linecap="round" filter="url(#glow-g)"/><path d="M36 5 L50 10 L36 15" fill="currentColor" filter="url(#glow-g)"/></svg>
+                    <span class="dot"></span>
+                </div>
+                <div class="pipe-node pipe-node--cd">
+                    <div class="pipe-node__badge pipe-node__badge--green">
+                        <img src="../slide-18/logos/nginx.svg" alt="Nginx">
+                    </div>
+                    <div class="pipe-node__label">Nginx</div>
+                    <div class="pipe-node__sub">Proxy Â· TLS Â· HTTPS</div>
+                </div>
+                <div class="pipe-arrow pipe-arrow--green">
+                    <svg viewBox="0 0 52 20" fill="none"><path d="M2 10 H40" stroke="currentColor" stroke-width="2" stroke-linecap="round" filter="url(#glow-g)"/><path d="M36 5 L50 10 L36 15" fill="currentColor" filter="url(#glow-g)"/></svg>
+                    <span class="dot"></span>
+                </div>
+                <div class="pipe-node pipe-node--prod">
+                    <div class="pipe-node__badge pipe-node__badge--prod">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <div class="pipe-node__label">Production</div>
+                    <div class="pipe-node__sub">SRTV Live 24/7</div>
+                </div>
+            </div><!-- /row3 -->
+
+        </div><!-- /pipeline -->
+
+        <!-- â”€â”€ Jenkins thumbnail (bottom-right) â”€â”€ -->
+        <button class="jenkins-thumb" id="jenkins-thumb" aria-label="Voir console Jenkins">
+            <img src="../cicdpipline.jpeg" alt="Console Jenkins" class="jenkins-thumb__img">
+            <span class="jenkins-thumb__label">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                Console Jenkins
+            </span>
+        </button>
+
+        <div class="navigation">
+            <span class="nav-year">22 / 34</span>
+        </div>
+    </div>
+
+    <!-- â•â• Jenkins overlay (step 2) â•â• -->
+    <div class="jenkins-overlay" id="jenkins-overlay">
+        <div class="jenkins-overlay__backdrop"></div>
+        <div class="jenkins-overlay__card">
+            <div class="jenkins-overlay__header">
+                <div class="jenkins-overlay__title">
+                    <img src="../assets/jenkins-logo.png" alt="Jenkins" width="28">
+                    <span>Console Jenkins â€” <strong>srtv-pipeline</strong></span>
+                </div>
+                <button class="jenkins-overlay__close" id="jenkins-close">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            <img src="../cicdpipline.jpeg" alt="Console Jenkins srtv-pipeline" class="jenkins-overlay__img">
+            <p class="jenkins-overlay__hint">Appuyer sur <kbd>â†’</kbd> pour continuer</p>
+        </div>
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

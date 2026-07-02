@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 05 : Ã‰tude de l'existant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+
+        <header class="slide__header">
+            <h1 class="slide__title">Ã‰tude de l'existant</h1>
+            <p class="slide__subtitle">Analyse des plateformes concurrentes du marchÃ©</p>
+        </header>
+
+        <!-- Row 1: 3 main platforms -->
+        <div class="row row--top">
+
+            <div class="plat" data-delay="0">
+                <div class="plat__card">
+                    <div class="plat__img-wrap">
+                        <img src="../assets/visitdubai.jpeg" alt="Visit Dubai" class="plat__img">
+                    </div>
+                    <div class="plat__body">
+                        <div class="plat__meta">
+                            <span class="plat__dot plat__dot--blue"></span>
+                            <span class="plat__cat">Tourisme</span>
+                        </div>
+                        <h3 class="plat__name">Visit Dubai</h3>
+                        <p class="plat__desc">Portail touristique officiel avec catalogue de destinations, hÃ©bergements et rÃ©servation en ligne. App mobile iOS et Android.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="plat" data-delay="1">
+                <div class="plat__card">
+                    <div class="plat__img-wrap">
+                        <img src="../assets/france.jpeg" alt="France.tv" class="plat__img">
+                    </div>
+                    <div class="plat__body">
+                        <div class="plat__meta">
+                            <span class="plat__dot plat__dot--purple"></span>
+                            <span class="plat__cat">MÃ©dia</span>
+                        </div>
+                        <h3 class="plat__name">France.tv RÃ©gions</h3>
+                        <p class="plat__desc">Plateforme publique avec accÃ¨s direct aux chaÃ®nes rÃ©gionales, replay et contenus locaux en direct.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="plat" data-delay="2">
+                <div class="plat__card">
+                    <div class="plat__img-wrap">
+                        <img src="../assets/yassir.jpeg" alt="Yassir" class="plat__img">
+                    </div>
+                    <div class="plat__body">
+                        <div class="plat__meta">
+                            <span class="plat__dot plat__dot--green"></span>
+                            <span class="plat__cat">MobilitÃ©</span>
+                        </div>
+                        <h3 class="plat__name">Yassir</h3>
+                        <p class="plat__desc">Super-app nord-africaine : transport Ã  la demande, livraison de repas et courses. Millions d'utilisateurs actifs.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Row 2: 2 platforms + Problem Statement -->
+        <div class="row row--bottom">
+
+            <div class="plat plat--small" data-delay="3">
+                <div class="plat__card">
+                    <div class="plat__img-wrap">
+                        <img src="../assets/tripadvisor.jpeg" alt="Tripadvisor" class="plat__img">
+                    </div>
+                    <div class="plat__body">
+                        <div class="plat__meta">
+                            <span class="plat__dot plat__dot--blue"></span>
+                            <span class="plat__cat">Tourisme</span>
+                        </div>
+                        <h3 class="plat__name">Tripadvisor</h3>
+                        <p class="plat__desc">Plateforme mondiale avec plus d'un milliard d'avis. Moteur de comparaison d'hÃ©bergements et d'expÃ©riences.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem Statement -->
+            <div class="gap-card" data-delay="4">
+                <div class="gap-card__inner">
+                    <h3 class="gap-card__title">ProblÃ©matique</h3>
+                    <p class="gap-card__lead">Aucune solution existante ne combine de maniÃ¨re cohÃ©rente ces cinq piliers dans un Ã©cosystÃ¨me unifiÃ©.</p>
+                    <div class="gap-card__features">
+                        <span class="gap-tag gap-tag--blue">Livestreaming rÃ©gional</span>
+                        <span class="gap-tag gap-tag--teal">DÃ©couverte touristique</span>
+                        <span class="gap-tag gap-tag--green">MobilitÃ© urbaine</span>
+                        <span class="gap-tag gap-tag--purple">VidÃ©os courtes</span>
+                        <span class="gap-tag gap-tag--indigo">Agent IA</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="plat plat--small" data-delay="5">
+                <div class="plat__card">
+                    <div class="plat__img-wrap">
+                        <img src="../assets/dailymotion.jpeg" alt="Dailymotion" class="plat__img">
+                    </div>
+                    <div class="plat__body">
+                        <div class="plat__meta">
+                            <span class="plat__dot plat__dot--purple"></span>
+                            <span class="plat__cat">MÃ©dia</span>
+                        </div>
+                        <h3 class="plat__name">Dailymotion</h3>
+                        <p class="plat__desc">Plateforme vidÃ©o franÃ§aise avec 300M+ utilisateurs mensuels. Diffusion en direct et contenus rÃ©gionaux.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">07 / 34</span>
+        </div>
+
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

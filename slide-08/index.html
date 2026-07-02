@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 06 : Critique comparative</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+
+        <header class="slide__header">
+            <h1 class="slide__title">Critique comparative</h1>
+        </header>
+
+        <!-- Comparison Matrix -->
+        <div class="compare__matrix">
+            <div class="compare__header">
+                <div class="compare__cell compare__cell--label"></div>
+                <div class="compare__cell compare__cell--plat">Visit Dubai</div>
+                <div class="compare__cell compare__cell--plat">France.tv</div>
+                <div class="compare__cell compare__cell--plat">Yassir</div>
+                <div class="compare__cell compare__cell--plat">Tripadvisor</div>
+                <div class="compare__cell compare__cell--plat">Dailymotion</div>
+            </div>
+
+            <div class="compare__row" data-delay="0">
+                <div class="compare__cell compare__cell--label">Contenu rÃ©gional</div>
+                <div class="compare__cell"><span class="dot dot--yes"></span></div>
+                <div class="compare__cell"><span class="dot dot--yes"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+            </div>
+
+            <div class="compare__row" data-delay="1">
+                <div class="compare__cell compare__cell--label">Livestreaming</div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--yes"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--yes"></span></div>
+            </div>
+
+            <div class="compare__row" data-delay="2">
+                <div class="compare__cell compare__cell--label">VidÃ©os courtes</div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--yes"></span></div>
+            </div>
+
+            <div class="compare__row" data-delay="3">
+                <div class="compare__cell compare__cell--label">Tourisme intÃ©grÃ©</div>
+                <div class="compare__cell"><span class="dot dot--yes"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--yes"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+            </div>
+
+            <div class="compare__row" data-delay="4">
+                <div class="compare__cell compare__cell--label">Service taxi</div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--yes"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+            </div>
+
+            <div class="compare__row" data-delay="5">
+                <div class="compare__cell compare__cell--label">Agent IA</div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+                <div class="compare__cell"><span class="dot dot--no"></span></div>
+            </div>
+
+        </div>
+
+        <!-- Critique Conclusion -->
+        <div class="critique" data-delay="7">
+            <p class="critique__text">
+                Aucune solution existante ne rÃ©unit <strong>l'ensemble des besoins du Sahel tunisien</strong>.
+                Les plateformes actuelles sont <strong>fragmentÃ©es</strong> : chacune couvre un domaine isolÃ©
+                (tourisme, transport, mÃ©dias) sans offrir une expÃ©rience unifiÃ©e.
+                Il manque une solution <strong>rÃ©gionale intelligente</strong> combinant livestreaming, tourisme,
+                mobilitÃ© et IA au sein d'une mÃªme plateforme.
+            </p>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">08 / 34</span>
+        </div>
+
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

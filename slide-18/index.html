@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 11 : Stack Technique &amp; Environnement</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+
+        <header class="slide__header">
+            <h1 class="slide__title">Stack Technique &amp; Environnement</h1>
+            <p class="slide__subtitle">Technologies, outils et infrastructure du projet SRTV</p>
+        </header>
+
+        <!-- Stack Technique -->
+        <div class="category" data-delay="1">
+            <div class="category__label">Stack Technique</div>
+            <div class="category__grid category__grid--stack">
+                <div class="tech__card" data-delay="0">
+                    <img src="logos/logo_nestjs.png" alt="NestJS" class="tech__logo">
+                    <div class="tech__info">
+                        <span class="tech__name">NestJS</span>
+                        <span class="tech__role">Back-end</span>
+                    </div>
+                </div>
+                <div class="tech__card" data-delay="1">
+                    <img src="logos/kafka.svg" alt="Apache Kafka" class="tech__logo">
+                    <div class="tech__info">
+                        <span class="tech__name">Apache Kafka</span>
+                        <span class="tech__role">Message Broker</span>
+                    </div>
+                </div>
+                <div class="tech__card" data-delay="2">
+                    <img src="logos/postgresql.svg" alt="PostgreSQL" class="tech__logo">
+                    <div class="tech__info">
+                        <span class="tech__name">PostgreSQL</span>
+                        <span class="tech__role">Base de donn&eacute;es</span>
+                    </div>
+                </div>
+                <div class="tech__card" data-delay="3">
+                    <img src="logos/react.svg" alt="React" class="tech__logo">
+                    <div class="tech__info">
+                        <span class="tech__name">React + TS</span>
+                        <span class="tech__role">Front-end Web</span>
+                    </div>
+                </div>
+                <div class="tech__card" data-delay="4">
+                    <img src="logos/react.svg" alt="React Native" class="tech__logo">
+                    <div class="tech__info">
+                        <span class="tech__name">React Native</span>
+                        <span class="tech__role">Mobile (Expo)</span>
+                    </div>
+                </div>
+                <div class="tech__card" data-delay="5">
+                    <img src="logos/docker.png" alt="Docker" class="tech__logo">
+                    <div class="tech__info">
+                        <span class="tech__name">Docker Compose</span>
+                        <span class="tech__role">Conteneurisation</span>
+                    </div>
+                </div>
+                <div class="tech__card" data-delay="6">
+                    <img src="logos/nginx.svg" alt="Nginx" class="tech__logo">
+                    <div class="tech__info">
+                        <span class="tech__name">Nginx</span>
+                        <span class="tech__role">Reverse Proxy</span>
+                    </div>
+                </div>
+                <div class="tech__card" data-delay="7">
+                    <img src="logos/keycloak.svg" alt="Keycloak" class="tech__logo">
+                    <div class="tech__info">
+                        <span class="tech__name">Keycloak</span>
+                        <span class="tech__role">Authentification</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Streaming & IA -->
+        <div class="category" data-delay="2">
+            <div class="category__label">Streaming Vid&eacute;o &amp; IA (LINA)</div>
+            <div class="category__grid category__grid--streaming">
+                <div class="tech__card" data-delay="0">
+                    <div class="tech__icon tech__icon--purple">HLS</div>
+                    <div class="tech__info">
+                        <span class="tech__name">HLS</span>
+                        <span class="tech__role">Diffusion vid&eacute;o</span>
+                    </div>
+                </div>
+                <div class="tech__card" data-delay="1">
+                    <img src="logos/ffmpeg.png" alt="FFmpeg" class="tech__logo">
+                    <div class="tech__info">
+                        <span class="tech__name">FFmpeg</span>
+                        <span class="tech__role">Transcodage</span>
+                    </div>
+                </div>
+                <div class="tech__card" data-delay="2">
+                    <img src="logos/aws.png" alt="AWS" class="tech__logo">
+                    <div class="tech__info">
+                        <span class="tech__name">AWS Transcribe</span>
+                        <span class="tech__role">Speech-to-Text</span>
+                    </div>
+                </div>
+                <div class="tech__card" data-delay="3">
+                    <img src="logos/gemini.png" alt="Gemini" class="tech__logo">
+                    <div class="tech__info">
+                        <span class="tech__name">Google Gemini</span>
+                        <span class="tech__role">LLM / R&eacute;ponses</span>
+                    </div>
+                </div>
+                <div class="tech__card" data-delay="4">
+                    <img src="logos/elevenlabs.jpeg" alt="ElevenLabs" class="tech__logo">
+                    <div class="tech__info">
+                        <span class="tech__name">ElevenLabs</span>
+                        <span class="tech__role">Text-to-Speech</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Outils -->
+        <div class="category" data-delay="3">
+            <div class="category__label">Outils de Conception &amp; D&eacute;veloppement</div>
+            <div class="category__grid category__grid--tools">
+                <div class="tool__chip" data-delay="0">
+                    <img src="logos/vscode.png" alt="VS Code" class="tool__logo">
+                    <span class="tool__name">VS Code</span>
+                </div>
+                <div class="tool__chip" data-delay="1">
+                    <img src="logos/intellij.png" alt="IntelliJ" class="tool__logo">
+                    <span class="tool__name">IntelliJ</span>
+                </div>
+                <div class="tool__chip" data-delay="2">
+                    <img src="logos/postman.png" alt="Postman" class="tool__logo">
+                    <span class="tool__name">Postman</span>
+                </div>
+                <div class="tool__chip" data-delay="3">
+                    <img src="logos/gitlab.png" alt="Git" class="tool__logo">
+                    <span class="tool__name">Git / GitLab</span>
+                </div>
+                <div class="tool__chip" data-delay="4">
+                    <img src="logos/jenkins.png" alt="Jenkins" class="tool__logo">
+                    <span class="tool__name">Jenkins</span>
+                </div>
+                <div class="tool__chip" data-delay="5">
+                    <img src="logos/figma.png" alt="Figma" class="tool__logo">
+                    <span class="tool__name">Figma</span>
+                </div>
+                <div class="tool__chip" data-delay="6">
+                    <img src="logos/drawio.png" alt="draw.io" class="tool__logo">
+                    <span class="tool__name">draw.io</span>
+                </div>
+                <div class="tool__chip" data-delay="7">
+                    <img src="logos/overleaf.png" alt="Overleaf" class="tool__logo">
+                    <span class="tool__name">Overleaf</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Environnement -->
+        <div class="category" data-delay="4">
+            <div class="category__label">Environnement</div>
+            <div class="env__grid">
+                <div class="env__card" data-delay="0">
+                    <div class="env__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+                    </div>
+                    <div class="env__info">
+                        <span class="env__name">Poste de d&eacute;veloppement</span>
+                        <span class="env__spec">Multi-c&oelig;ur &middot; 16 Go RAM &middot; SSD NVMe &middot; Win 11 / Ubuntu</span>
+                    </div>
+                </div>
+                <div class="env__card" data-delay="1">
+                    <div class="env__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+                    </div>
+                    <div class="env__info">
+                        <span class="env__name">VPS Production</span>
+                        <span class="env__spec">4 vCPU &middot; 16 Go RAM &middot; 200 Go NVMe &middot; Ubuntu 22.04 LTS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">18 / 34</span>
+        </div>
+
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

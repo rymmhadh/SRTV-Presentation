@@ -1,0 +1,92 @@
+/* ═══════════════════════════════════════
+   SRTV – Shared UI Shell
+   ═══════════════════════════════════════ */
+
+/* ── Small SRTV logo ── */
+.slide-logo {
+    position: fixed;
+    top: 1.1rem;
+    right: 1.2rem;
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    z-index: 200;
+    opacity: 0;
+    animation: srtvLogoIn 0.7s cubic-bezier(0.22,1,0.36,1) 1.2s forwards;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10));
+    pointer-events: none;
+}
+@keyframes srtvLogoIn {
+    from { opacity: 0; transform: translateY(-10px) scale(0.85); }
+    to   { opacity: 0.9; transform: translateY(0) scale(1); }
+}
+
+/* ── Page counter pill ── */
+.navigation {
+    position: fixed !important;
+    bottom: 1.4rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 200 !important;
+}
+
+.nav-year {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.2rem !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 0.88rem !important;
+    font-weight: 600 !important;
+    color: #0f172a !important;
+    letter-spacing: 0.04em !important;
+    background: rgba(255,255,255,0.92) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    padding: 0.55rem 1.4rem !important;
+    border-radius: 100px !important;
+    border: 1px solid rgba(0,119,204,0.18) !important;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.09), 0 1px 4px rgba(0,0,0,0.05) !important;
+}
+
+.nav-current {
+    font-weight: 800;
+    font-size: 1rem;
+    color: #0077cc;
+}
+.nav-sep {
+    color: #94a3b8;
+    font-weight: 400;
+}
+.nav-total {
+    color: #64748b;
+}
+
+/* ── Global progress bar (injected by nav.js) ── */
+#srtv-progress {
+    /* base styles set by JS; these are overrides */
+    border-radius: 0 3px 3px 0 !important;
+    transition: width 0.65s cubic-bezier(0.22,1,0.36,1), opacity 0.4s ease !important;
+}
+
+/* ── Swipe cursor hint (desktop only) ── */
+@media (hover: hover) {
+    body::after {
+        content: '← →';
+        position: fixed;
+        bottom: 1.35rem;
+        right: 1.6rem;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.68rem;
+        font-weight: 500;
+        color: #94a3b8;
+        letter-spacing: 0.08em;
+        opacity: 0;
+        animation: hintIn 0.6s ease 4s forwards;
+        pointer-events: none;
+        z-index: 100;
+    }
+    @keyframes hintIn {
+        from { opacity: 0; transform: translateY(4px); }
+        to   { opacity: 0.55; transform: translateY(0); }
+    }
+}

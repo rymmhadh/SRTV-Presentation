@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 12 : Analyse et spÃ©cification des besoins</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+
+        <header class="slide__header">
+            <h1 class="slide__title">Analyse et spÃ©cification des besoins</h1>
+        </header>
+
+        <div class="needs-table">
+            <div class="needs-table__header">
+                <div class="needs-table__badge">
+                    <span class="needs-table__badge-dot"></span>
+                    Besoins fonctionnels par acteur
+                </div>
+            </div>
+
+            <div class="needs-table__grid">
+                <div class="needs-table__row needs-table__row--head">
+                    <div class="needs-table__cell">Acteur</div>
+                    <div class="needs-table__cell">RÃ´le principal</div>
+                    <div class="needs-table__cell">Besoins fonctionnels clÃ©s</div>
+                </div>
+
+                <div class="needs-table__row needs-table__row--indigo" data-delay="0">
+                    <div class="needs-table__cell needs-table__cell--actor">
+                        <span class="needs-table__dot needs-table__dot--indigo"></span>
+                        Super Admin
+                    </div>
+                    <div class="needs-table__cell needs-table__cell--role">Supervision, comptes et modÃ©ration</div>
+                    <div class="needs-table__cell needs-table__cell--needs">
+                        <ul class="needs-table__list">
+                            <li>Gestion des comptes et rÃ´les</li>
+                            <li>ModÃ©ration des contenus signalÃ©s</li>
+                            <li>Tableau de bord global</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="needs-table__row needs-table__row--blue" data-delay="1">
+                    <div class="needs-table__cell needs-table__cell--actor">
+                        <span class="needs-table__dot needs-table__dot--blue"></span>
+                        Business Manager
+                    </div>
+                    <div class="needs-table__cell needs-table__cell--role">Administration des Ã©tablissements touristiques</div>
+                    <div class="needs-table__cell needs-table__cell--needs">
+                        <ul class="needs-table__list">
+                            <li>Administration restaurants & hÃ©bergement</li>
+                            <li>Gestion expÃ©riences & destinations</li>
+                            <li>Gestion des Ã©vÃ©nements</li>
+                            <li>Tableau de bord mÃ©tier</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="needs-table__row needs-table__row--purple" data-delay="2">
+                    <div class="needs-table__cell needs-table__cell--actor">
+                        <span class="needs-table__dot needs-table__dot--purple"></span>
+                        Content Manager
+                    </div>
+                    <div class="needs-table__cell needs-table__cell--role">Gestion des contenus multimÃ©dias</div>
+                    <div class="needs-table__cell needs-table__cell--needs">
+                        <ul class="needs-table__list">
+                            <li>Administration des Reels</li>
+                            <li>Administration des livestreams</li>
+                            <li>Tableau de bord Ã©ditorial</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="needs-table__row needs-table__row--orange" data-delay="3">
+                    <div class="needs-table__cell needs-table__cell--actor">
+                        <span class="needs-table__dot needs-table__dot--orange"></span>
+                        Chauffeur
+                    </div>
+                    <div class="needs-table__cell needs-table__cell--role">Transport Ã  la demande</div>
+                    <div class="needs-table__cell needs-table__cell--needs">
+                        <ul class="needs-table__list">
+                            <li>Gestion de la disponibilitÃ©</li>
+                            <li>Gestion des demandes de course</li>
+                            <li>Notifications push en temps rÃ©el</li>
+                            <li>Tableau de bord chauffeur</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="needs-table__row needs-table__row--emerald" data-delay="4">
+                    <div class="needs-table__cell needs-table__cell--actor">
+                        <span class="needs-table__dot needs-table__dot--emerald"></span>
+                        Voyageur
+                    </div>
+                    <div class="needs-table__cell needs-table__cell--role">Utilisateur final de la plateforme</div>
+                    <div class="needs-table__cell needs-table__cell--needs">
+                        <ul class="needs-table__list">
+                            <li>Exploration de la rÃ©gion</li>
+                            <li>Interaction avec LINA</li>
+                            <li>Authentification et profil</li>
+                            <li>Reels, livestreams et rÃ©servations</li>
+                            <li>Avis et notifications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">12 / 34</span>
+        </div>
+
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>
