@@ -8,7 +8,7 @@
     const order = [
         1, 2, 4, 5, 36, 8, 37, 38, 39, 28, 40, 41,
         24, 25, 26, 27,
-        20, 35, 43, 15, 18, 22,
+        35, 44, 46, 20, 45, 43, 15, 18, 22,
         34,
         30, 31, 42, 32
     ];
@@ -48,7 +48,9 @@
         "Qu'est-ce que Lina ?", "Ce que Lina sait faire", "Interface Lina",
         "Lina en action : Briefing proactif", "Lina en action : Réservation taxi",
         "Interface Livestream", "Interface Reels", "Interface Shopping", "Interface Restaurant",
-        "Architecture du Projet SRTV", "Orchestration d'agents IA (n8n)",
+        "Orchestration d'agents IA (n8n)", "Livestream : pipeline technique",
+        "Système de notifications", "Architecture du Projet SRTV",
+        "Schéma fonctionnel & déploiement",
         "Besoins & Exigences", "Méthodologie Scrum", "Stack Technique & Environnement",
         "Pipeline CI / CD SRTV",
         "Démonstration",

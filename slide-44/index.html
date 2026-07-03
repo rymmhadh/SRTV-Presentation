@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide : Livestream — pipeline technique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+
+        <header class="slide__header">
+            <div class="slide__badge">
+                <span class="slide__badge-dot"></span>
+                <span>Deep dive technique</span>
+            </div>
+            <h1 class="slide__title">Le livestream, comment ça marche</h1>
+            <p class="slide__subtitle">Un pipeline HLS entièrement intégré au livestream-service, sans serveur média ni logiciel d'ingestion séparé</p>
+        </header>
+
+        <div class="modules__label">Pipeline de diffusion</div>
+        <div class="modules__grid">
+            <div class="module__card" data-delay="1">
+                <div class="module__accent module__accent--orange"></div>
+                <div class="module__icon module__icon--orange">1</div>
+                <h3 class="module__name">Upload vidéo</h3>
+                <p class="module__desc">Le créateur envoie son fichier vidéo (MP4) depuis l'app</p>
+            </div>
+            <div class="module__card" data-delay="2">
+                <div class="module__accent module__accent--orange"></div>
+                <div class="module__icon module__icon--orange">2</div>
+                <h3 class="module__name">Transcodage FFmpeg</h3>
+                <p class="module__desc">Conversion à la volée en plusieurs qualités vidéo</p>
+            </div>
+            <div class="module__card" data-delay="3">
+                <div class="module__accent module__accent--orange"></div>
+                <div class="module__icon module__icon--orange">3</div>
+                <h3 class="module__name">Segmentation .ts</h3>
+                <p class="module__desc">Le flux est découpé en segments de 2 à 10 secondes</p>
+            </div>
+            <div class="module__card" data-delay="4">
+                <div class="module__accent module__accent--orange"></div>
+                <div class="module__icon module__icon--orange">4</div>
+                <h3 class="module__name">Manifeste .m3u8</h3>
+                <p class="module__desc">Un fichier manifeste décrit l'ordre des segments HLS</p>
+            </div>
+            <div class="module__card" data-delay="5">
+                <div class="module__accent module__accent--orange"></div>
+                <div class="module__icon module__icon--orange">5</div>
+                <h3 class="module__name">Qualité adaptative</h3>
+                <p class="module__desc">Le lecteur bascule de qualité selon la bande passante</p>
+            </div>
+        </div>
+
+        <div class="modules__label">Pourquoi FFmpeg intégré au microservice</div>
+        <div class="modules__grid modules__grid--three">
+            <div class="module__card" data-delay="6">
+                <div class="module__accent module__accent--ink"></div>
+                <div class="module__icon module__icon--ink">A</div>
+                <h3 class="module__name">Pas de serveur média séparé</h3>
+                <p class="module__desc">Contrairement à Nginx-RTMP ou MediaSoup, tout reste dans le microservice</p>
+            </div>
+            <div class="module__card" data-delay="7">
+                <div class="module__accent module__accent--ink"></div>
+                <div class="module__icon module__icon--ink">B</div>
+                <h3 class="module__name">Pas d'ingestion OBS requise</h3>
+                <p class="module__desc">Upload direct de fichier, pas besoin de flux RTMP continu</p>
+            </div>
+            <div class="module__card" data-delay="8">
+                <div class="module__accent module__accent--ink"></div>
+                <div class="module__icon module__icon--ink">C</div>
+                <h3 class="module__name">Empreinte mémoire faible</h3>
+                <p class="module__desc">Process de transcodage à la demande, pas de résident permanent</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">-- / --</span>
+        </div>
+
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

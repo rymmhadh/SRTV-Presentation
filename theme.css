@@ -43,8 +43,20 @@ body {
 h1,
 h2,
 h3 {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    -webkit-text-fill-color: var(--theme-ink) !important;
     color: var(--theme-ink) !important;
     letter-spacing: 0 !important;
+}
+
+.slide__title::after,
+.cover__title::after,
+.plan__title::after,
+.demo-title::after,
+.merci-title::after {
+    background: linear-gradient(90deg, var(--theme-orange-dark), var(--theme-orange)) !important;
 }
 
 .cover__title-accent,

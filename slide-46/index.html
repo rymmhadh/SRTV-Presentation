@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide : Système de notifications</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+
+        <header class="slide__header">
+            <div class="slide__badge">
+                <span class="slide__badge-dot"></span>
+                <span>Fiabilité &amp; temps réel</span>
+            </div>
+            <h1 class="slide__title">Le système de notifications</h1>
+            <p class="slide__subtitle">Des événements Kafka orchestrés par n8n, livrés en push (mobile), en direct (web) ou par e-mail</p>
+        </header>
+
+        <div class="modules__label">Canaux de livraison</div>
+        <div class="modules__grid modules__grid--three">
+            <div class="module__card" data-delay="1">
+                <div class="module__accent module__accent--orange"></div>
+                <div class="module__icon module__icon--orange">📱</div>
+                <h3 class="module__name">Mobile — Push Expo</h3>
+                <p class="module__desc">Jeton enregistré à la connexion, alertes livrées en temps réel</p>
+            </div>
+            <div class="module__card" data-delay="2">
+                <div class="module__accent module__accent--orange"></div>
+                <div class="module__icon module__icon--orange">💻</div>
+                <h3 class="module__name">Web — Flux en direct</h3>
+                <p class="module__desc">Pas de push navigateur : écoute continue du flux d'événements + notification native</p>
+            </div>
+            <div class="module__card" data-delay="3">
+                <div class="module__accent module__accent--orange"></div>
+                <div class="module__icon module__icon--orange">✉️</div>
+                <h3 class="module__name">E-mail — SMTP</h3>
+                <p class="module__desc">Reçu récapitulatif envoyé à la clôture de chaque course</p>
+            </div>
+        </div>
+
+        <div class="modules__label">Workflows n8n déclenchés par événement</div>
+        <div class="modules__grid">
+            <div class="module__card" data-delay="4">
+                <div class="module__accent module__accent--ink"></div>
+                <div class="module__icon module__icon--ink">1</div>
+                <h3 class="module__name">Notification chauffeur</h3>
+                <p class="module__desc">Sur course demandée — push Expo au chauffeur assigné</p>
+            </div>
+            <div class="module__card" data-delay="5">
+                <div class="module__accent module__accent--ink"></div>
+                <div class="module__icon module__icon--ink">2</div>
+                <h3 class="module__name">Notification passager</h3>
+                <p class="module__desc">Sur course acceptée — push Expo au voyageur</p>
+            </div>
+            <div class="module__card" data-delay="6">
+                <div class="module__accent module__accent--ink"></div>
+                <div class="module__icon module__icon--ink">3</div>
+                <h3 class="module__name">Briefing proactif</h3>
+                <p class="module__desc">3 créneaux quotidiens (8h / 13h / 19h) — message personnalisé + push</p>
+            </div>
+            <div class="module__card" data-delay="7">
+                <div class="module__accent module__accent--ink"></div>
+                <div class="module__icon module__icon--ink">4</div>
+                <h3 class="module__name">Reçu de course</h3>
+                <p class="module__desc">Fin de course — e-mail récapitulatif via SMTP</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">-- / --</span>
+        </div>
+
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

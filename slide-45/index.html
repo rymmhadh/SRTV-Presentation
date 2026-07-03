@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide : Schéma fonctionnel de la plateforme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+        <header class="slide__header">
+            <div class="slide__badge">
+                <span class="slide__badge-dot"></span>
+                <span>Architecture &amp; déploiement</span>
+            </div>
+            <h1 class="slide__title">Le schéma fonctionnel de SRTV</h1>
+            <p class="slide__subtitle">Neuf microservices conteneurisés, un bus événementiel Kafka, et une base de données isolée par service — déployés sur un unique VPS Docker</p>
+        </header>
+
+        <div class="arch-diagram" data-delay="1">
+            <div class="arch-frame" data-delay="0">
+                <img src="architecture-physique.png" alt="Schéma fonctionnel et de déploiement de la plateforme SRTV" class="arch-img">
+            </div>
+            <div class="arch-caption" data-delay="2">
+                <span class="arch-caption__line">Client web (React) &amp; mobile (Expo) &middot; Gateway NestJS &middot; 7 microservices métier &middot; Keycloak &middot; Kafka</span>
+                <span class="arch-caption__line">Docker Compose sur VPS Ubuntu &middot; PostgreSQL database-per-service &middot; Pipeline Jenkins CI/CD</span>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">-- / --</span>
+        </div>
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>
