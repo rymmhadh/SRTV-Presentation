@@ -298,6 +298,71 @@ html, body {
     background: linear-gradient(180deg, transparent, rgba(0, 119, 204, 0.25), transparent);
 }
 
+/* ── Jury panel ── */
+.jury-panel {
+    width: 100%;
+    max-width: 620px;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(242, 106, 33, 0.14);
+    border-radius: 18px;
+    padding: 0.85rem 1.4rem 0.95rem;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255,255,255,0.6) inset;
+}
+
+.jury-panel__header {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-align: center;
+    color: #475569;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid rgba(242, 106, 33, 0.14);
+}
+
+.jury-panel__count {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.66rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #f26a21;
+}
+
+.jury-panel__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.22rem;
+}
+
+.jury-panel__row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.1rem 0;
+}
+
+.jury-panel__name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #0f172a;
+    white-space: nowrap;
+}
+
+.jury-panel__role {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 500;
+    color: #64748b;
+    text-align: right;
+}
+
 /* ── Navigation ── */
 .navigation {
     position: absolute;
