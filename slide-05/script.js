@@ -328,11 +328,34 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ═══════════════════════════════════════════════════════════
        ENTRANCE SEQUENCE
        ═══════════════════════════════════════════════════════════ */
-    if (prefersReduced) return;
+    /* ═══════════════════════════════════════════════════════════
+       ANIMATED STAT COUNTERS
+       ═══════════════════════════════════════════════════════════ */
+    function animateCounter(el, duration = 1400) {
+        const target = parseFloat(el.dataset.target || '0');
+        const suffix = el.dataset.suffix || '';
+        const start = performance.now();
+        function tick(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = Math.round(target * eased);
+            el.textContent = value + suffix;
+            if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+    }
+
+    if (prefersReduced) {
+        document.querySelectorAll('[data-count]').forEach((el) => {
+            el.textContent = (el.dataset.target || '0') + (el.dataset.suffix || '');
+        });
+        return;
+    }
 
     const header    = document.querySelector('.slide__header');
     const title     = document.querySelector('.slide__title');
     const subtitle  = document.querySelector('.slide__subtitle');
+    const statStrip = document.querySelector('.stat-strip');
     const nav       = document.querySelector('.navigation');
 
     const setTransition = (el, props, delay) => {
@@ -355,7 +378,15 @@ document.addEventListener('DOMContentLoaded', () => {
     setTransition(subtitle,
         'opacity 0.7s ease, transform 0.7s ease', 700);
 
-    // 4. Footer
+    // 4. Stat strip + counters
+    if (statStrip) {
+        setTransition(statStrip, 'opacity 0.7s ease, transform 0.7s ease', 950);
+        setTimeout(() => {
+            statStrip.querySelectorAll('[data-count]').forEach((el) => animateCounter(el));
+        }, 1000);
+    }
+
+    // 5. Footer
     setTransition(nav,
         'opacity 0.8s ease, transform 0.8s ease', 1200);
 });
