@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Besoins &amp; Exigences</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+
+        <header class="slide__header">
+            <div class="slide__badge">
+                <span class="slide__badge-dot"></span>
+                <span>Besoins &amp; Exigences</span>
+            </div>
+            <h1 class="slide__title">Pour qui, et à quelles conditions</h1>
+            <p class="slide__subtitle">Cinq profils d'utilisateurs à servir, avec des exigences de fiabilité et de performance non négociables</p>
+        </header>
+
+        <div class="modules__label">Acteurs &amp; besoins clés</div>
+        <div class="modules__grid">
+            <div class="module__card" data-delay="1">
+                <div class="module__accent module__accent--blue"></div>
+                <h3 class="module__name">Super Admin</h3>
+                <p class="module__desc">Supervision, comptes et modération</p>
+            </div>
+            <div class="module__card" data-delay="2">
+                <div class="module__accent module__accent--indigo"></div>
+                <h3 class="module__name">Business Manager</h3>
+                <p class="module__desc">Administration des établissements touristiques</p>
+            </div>
+            <div class="module__card" data-delay="3">
+                <div class="module__accent module__accent--violet"></div>
+                <h3 class="module__name">Content Manager</h3>
+                <p class="module__desc">Gestion des contenus multimédias</p>
+            </div>
+            <div class="module__card" data-delay="4">
+                <div class="module__accent module__accent--orange"></div>
+                <h3 class="module__name">Chauffeur</h3>
+                <p class="module__desc">Transport à la demande</p>
+            </div>
+            <div class="module__card" data-delay="5">
+                <div class="module__accent module__accent--emerald"></div>
+                <h3 class="module__name">Voyageur</h3>
+                <p class="module__desc">Utilisateur final, guidé par Lina</p>
+            </div>
+        </div>
+
+        <div class="modules__label">Exigences transversales</div>
+        <div class="modules__grid">
+            <div class="module__card" data-delay="6">
+                <div class="module__accent module__accent--blue"></div>
+                <h3 class="module__name">Sécurité</h3>
+                <p class="module__desc">TLS &amp; SSO sur toute la plateforme</p>
+            </div>
+            <div class="module__card" data-delay="7">
+                <div class="module__accent module__accent--indigo"></div>
+                <h3 class="module__name">Performance</h3>
+                <p class="module__desc">Temps de réponse &lt; 300ms</p>
+            </div>
+            <div class="module__card" data-delay="8">
+                <div class="module__accent module__accent--violet"></div>
+                <h3 class="module__name">Disponibilité</h3>
+                <p class="module__desc">99.5% — tolérance aux pannes</p>
+            </div>
+            <div class="module__card" data-delay="9">
+                <div class="module__accent module__accent--orange"></div>
+                <h3 class="module__name">Scalabilité</h3>
+                <p class="module__desc">Mise à l'échelle selon la charge</p>
+            </div>
+            <div class="module__card" data-delay="10">
+                <div class="module__accent module__accent--emerald"></div>
+                <h3 class="module__name">Multi-plateforme</h3>
+                <p class="module__desc">Web et mobile, expérience cohérente</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">19 / 27</span>
+        </div>
+
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>
