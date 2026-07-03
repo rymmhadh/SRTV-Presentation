@@ -28,7 +28,7 @@ body {
 }
 
 .cover__header {
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: 1fr auto 1fr !important;
 }
 
 .cover__logo-wrap--right {
