@@ -286,80 +286,84 @@
 (function () {
     'use strict';
 
-    function initLightbox() {
-        var SEL = '.arch-img, .uc-diagram, .diagram-img, .plat__img, ' +
-                  '.jenkins-thumb__img, .jenkins-overlay__img, ' +
-                  '.capture-frame img, .flow-svg';
-        var figures = document.querySelectorAll(SEL);
-        if (!figures.length) return;
+    var SEL = '.arch-img, .uc-diagram, .diagram-img, .plat__img, ' +
+              '.jenkins-thumb__img, .jenkins-overlay__img, ' +
+              '.capture-frame img, .flow-svg, .zoomable';
+    var overlay = null, inner = null;
 
-        var overlay = document.createElement('div');
+    function build() {
+        overlay = document.createElement('div');
         overlay.id = 'srtv-lightbox';
-        overlay.style.cssText = [
-            'position:fixed;inset:0;z-index:9800;display:none;',
-            'align-items:center;justify-content:center;padding:3vh 3vw;box-sizing:border-box;',
-            'background:rgba(10,15,25,0.93);backdrop-filter:blur(6px);cursor:zoom-out;',
-            'opacity:0;transition:opacity 0.25s ease;'
-        ].join('');
-
-        var inner = document.createElement('div');
+        overlay.style.cssText = 'position:fixed;inset:0;z-index:9800;display:none;' +
+            'align-items:center;justify-content:center;padding:3vh 3vw;box-sizing:border-box;' +
+            'background:rgba(10,15,25,0.93);backdrop-filter:blur(6px);cursor:zoom-out;' +
+            'opacity:0;transition:opacity 0.25s ease;';
+        inner = document.createElement('div');
         inner.style.cssText = 'max-width:96vw;max-height:92vh;display:flex;align-items:center;justify-content:center;';
         overlay.appendChild(inner);
-
         var hint = document.createElement('div');
         hint.textContent = 'Cliquez ou Échap pour fermer';
         hint.style.cssText = 'position:fixed;bottom:16px;left:50%;transform:translateX(-50%);color:#cbd5e1;font:14px Inter,sans-serif;letter-spacing:0.02em;';
         overlay.appendChild(hint);
-
-        document.body.appendChild(overlay);
-
-        function open(node) {
-            inner.innerHTML = '';
-            var clone;
-            if (node.tagName.toLowerCase() === 'img') {
-                clone = document.createElement('img');
-                clone.src = node.currentSrc || node.src;
-                clone.style.cssText = 'max-width:96vw;max-height:92vh;object-fit:contain;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.5);background:#fff;';
-            } else {
-                clone = node.cloneNode(true);
-                clone.removeAttribute('class');
-                clone.style.cssText = 'width:auto;height:auto;max-width:96vw;max-height:92vh;background:#fff;border-radius:12px;padding:2.5vh 2.5vw;box-sizing:border-box;box-shadow:0 20px 60px rgba(0,0,0,0.5);';
-            }
-            inner.appendChild(clone);
-            overlay.style.display = 'flex';
-            requestAnimationFrame(function () { overlay.style.opacity = '1'; });
-        }
-
-        function close() {
-            overlay.style.opacity = '0';
-            setTimeout(function () { overlay.style.display = 'none'; inner.innerHTML = ''; }, 250);
-        }
-
-        figures.forEach(function (el) {
-            el.style.cursor = 'zoom-in';
-            el.classList.add('zoomable');
-            el.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                open(el);
-            });
-        });
-
         overlay.addEventListener('click', function (e) { e.stopPropagation(); close(); });
         overlay.addEventListener('contextmenu', function (e) { e.preventDefault(); e.stopPropagation(); });
-
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && overlay.style.display === 'flex') {
-                e.preventDefault();
-                e.stopPropagation();
-                close();
-            }
-        }, true);
+        document.body.appendChild(overlay);
     }
 
+    function open(node) {
+        if (!overlay) build();
+        inner.innerHTML = '';
+        var clone;
+        if (node.tagName.toLowerCase() === 'img') {
+            clone = document.createElement('img');
+            clone.src = node.currentSrc || node.src;
+            clone.style.cssText = 'max-width:96vw;max-height:92vh;object-fit:contain;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.5);background:#fff;';
+        } else {
+            clone = node.cloneNode(true);
+            clone.removeAttribute('class');
+            clone.style.cssText = 'width:auto;height:auto;max-width:96vw;max-height:92vh;background:#fff;border-radius:12px;padding:2.5vh 2.5vw;box-sizing:border-box;box-shadow:0 20px 60px rgba(0,0,0,0.5);';
+        }
+        inner.appendChild(clone);
+        overlay.style.display = 'flex';
+        requestAnimationFrame(function () { overlay.style.opacity = '1'; });
+    }
+
+    function close() {
+        if (!overlay) return;
+        overlay.style.opacity = '0';
+        setTimeout(function () { overlay.style.display = 'none'; inner.innerHTML = ''; }, 250);
+    }
+
+    /* Delegated capture-phase listener: runs BEFORE the navigation handler */
+    document.addEventListener('click', function (e) {
+        if (overlay && overlay.style.display === 'flex') return;
+        var t = e.target;
+        if (!t || !t.closest) return;
+        var fig = t.closest(SEL);
+        if (!fig) return;
+        e.preventDefault();
+        e.stopPropagation();
+        open(fig);
+    }, true);
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay && overlay.style.display === 'flex') {
+            e.preventDefault();
+            e.stopPropagation();
+            close();
+        }
+    }, true);
+
+    /* Zoom cursor hint on figures */
+    function markCursors() {
+        document.querySelectorAll(SEL).forEach(function (el) {
+            el.style.cursor = 'zoom-in';
+            el.classList.add('zoomable');
+        });
+    }
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initLightbox);
+        document.addEventListener('DOMContentLoaded', markCursors);
     } else {
-        initLightbox();
+        markCursors();
     }
 })();
