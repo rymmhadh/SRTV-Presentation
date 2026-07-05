@@ -7,7 +7,7 @@
        This lets us reorder the narrative without renaming any folder. */
     const order = [
         1, 2, 4, 5, 36, 8, 37, 38,
-        47, 48, 40, 50, 41, 49,
+        47, 48, 51, 40, 50, 41, 49,
         18, 44, 20, 22, 15,
         24, 25, 26, 27, 28,
         34,
@@ -47,6 +47,7 @@
         "Problématique", "Étude comparative",
         "Notre solution : SRTV + Lina", "Qu'est-ce que Lina ?",
         "Architecture de Lina", "Planification multi-jours (n8n)",
+        "Le workflow n8n en réel",
         "Lina en action : Briefing proactif", "Briefing proactif : le workflow",
         "Lina en action : Réservation taxi",
         "Conversation naturelle avec Lina",
