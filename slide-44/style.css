@@ -255,3 +255,16 @@ html, body {
     .modules__grid { grid-template-columns: repeat(2, 1fr); }
     .modules__grid--three { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ── Flowchart diagram (style organigramme) ── */
+.diagram-panel { width: 100%; max-width: 1100px; opacity: 0; transform: translateY(24px); }
+.flow-svg { width: 100%; height: auto; max-height: 62vh; display: block; }
+.flow-svg .box { fill: #ffffff; stroke: #94a3b8; stroke-width: 1.6; filter: drop-shadow(0 6px 16px rgba(15,23,42,0.08)); }
+.flow-svg .box--ai { fill: #e9edf3; stroke: #475569; stroke-width: 2; }
+.flow-svg .box--dashed { fill: #ffffff; stroke: #94a3b8; stroke-width: 1.6; stroke-dasharray: 6 5; filter: none; }
+.flow-svg .edge { stroke: #334155; stroke-width: 2; fill: none; }
+.flow-svg .t-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 20px; fill: #0f172a; text-anchor: middle; }
+.flow-svg .t-title2 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 18px; fill: #0f172a; text-anchor: middle; }
+.flow-svg .t-sub { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 14px; fill: #475569; text-anchor: middle; }
+.flow-svg .t-sub--ai { fill: #b3480f; font-weight: 700; }
+.flow-svg .t-section { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 15px; fill: #64748b; text-anchor: middle; letter-spacing: 0.04em; }
