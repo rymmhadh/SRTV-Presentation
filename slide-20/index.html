@@ -20,16 +20,16 @@
     <div class="slide">
         <header class="slide__header">
             <h1 class="slide__title">Architecture du Projet SRTV</h1>
-            <p class="slide__subtitle">Vue d'ensemble de l'architecture microservices</p>
+            <p class="slide__subtitle">Diagramme de déploiement — VPS unique, Docker Compose, 7 conteneurs PostgreSQL isolés</p>
         </header>
 
         <div class="arch-diagram" data-delay="1">
             <div class="arch-frame" data-delay="0">
-                <img src="architecture.png" alt="Architecture du projet SRTV" class="arch-img">
+                <img src="architecture-physique.png" alt="Architecture physique de la plateforme SRTV : couches client, applicative et données" class="arch-img">
             </div>
             <div class="arch-caption" data-delay="2">
-                <span class="arch-caption__line">Architecture fonctionnelle  :  7 microservices conteneuris&eacute;s</span>
-                <span class="arch-caption__line">Kafka &middot; PostgreSQL &middot; NestJS &middot; React &middot; Docker Compose</span>
+                <span class="arch-caption__line">3 couches : Client &middot; Applicative (NGINX, Gateway, 7 services, Kafka, Keycloak) &middot; Données</span>
+                <span class="arch-caption__line">NestJS &middot; FastAPI &middot; Kafka &middot; PostgreSQL 15 &middot; Docker &middot; Jenkins CI/CD</span>
             </div>
         </div>
 

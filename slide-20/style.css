@@ -227,3 +227,9 @@ html, body {
     font-weight: 700 !important;
     line-height: 1.1 !important;
 }
+
+/* ── Agrandissement pour le diagramme physique détaillé ── */
+.arch-diagram { max-width: 1300px; padding: 0.3rem 1rem; gap: 0.7rem; }
+.arch-frame { max-width: 1240px; padding: 0.8rem; }
+.arch-img { max-height: 68vh; }
+.slide .slide__title { font-size: clamp(1.9rem, 3.2vw, 2.6rem) !important; }
