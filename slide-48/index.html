@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide : Planification multi-jours (n8n)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+
+        <header class="slide__header">
+            <div class="slide__badge">
+                <span class="slide__badge-dot"></span>
+                <span>Orchestration n8n</span>
+            </div>
+            <h1 class="slide__title">Planification d'un voyage multi-jours</h1>
+            <p class="slide__subtitle">Un workflow n8n enrichit la demande du voyageur, puis Claude Haiku génère un programme personnalisé jour par jour</p>
+        </header>
+
+        <div class="diagram-panel">
+            <svg viewBox="0 0 1100 470" class="flow-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow n8n de planification multi-jours">
+                <defs>
+                    <marker id="arr2" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L7,3 L0,6 Z" fill="#334155"/>
+                    </marker>
+                </defs>
+
+                <!-- Top pipeline : 6 steps -->
+                <g class="node">
+                    <rect x="12" y="60" width="150" height="88" rx="10" class="box"/>
+                    <text x="87" y="98" class="t-title">Réception</text>
+                    <text x="87" y="120" class="t-sub">de la demande</text>
+                </g>
+                <g class="node">
+                    <rect x="192" y="60" width="150" height="88" rx="10" class="box"/>
+                    <text x="267" y="98" class="t-title">Localisation</text>
+                    <text x="267" y="120" class="t-sub">de la ville</text>
+                </g>
+                <g class="node">
+                    <rect x="372" y="60" width="150" height="88" rx="10" class="box box--ai"/>
+                    <text x="447" y="92" class="t-title">Enrichissement</text>
+                    <text x="447" y="114" class="t-sub t-sub--ai">séquentiel</text>
+                </g>
+                <g class="node">
+                    <rect x="552" y="60" width="150" height="88" rx="10" class="box"/>
+                    <text x="627" y="92" class="t-title">Préparation</text>
+                    <text x="627" y="120" class="t-sub">du prompt</text>
+                </g>
+                <g class="node">
+                    <rect x="732" y="60" width="150" height="88" rx="10" class="box box--ai"/>
+                    <text x="807" y="98" class="t-title">Claude Haiku</text>
+                    <text x="807" y="120" class="t-sub t-sub--ai">génération</text>
+                </g>
+                <g class="node">
+                    <rect x="912" y="60" width="150" height="88" rx="10" class="box"/>
+                    <text x="987" y="92" class="t-title">Réponse</text>
+                    <text x="987" y="120" class="t-sub">programme</text>
+                </g>
+
+                <!-- pipeline arrows -->
+                <line x1="162" y1="104" x2="190" y2="104" class="edge" marker-end="url(#arr2)"/>
+                <line x1="342" y1="104" x2="370" y2="104" class="edge" marker-end="url(#arr2)"/>
+                <line x1="522" y1="104" x2="550" y2="104" class="edge" marker-end="url(#arr2)"/>
+                <line x1="702" y1="104" x2="730" y2="104" class="edge" marker-end="url(#arr2)"/>
+                <line x1="882" y1="104" x2="910" y2="104" class="edge" marker-end="url(#arr2)"/>
+
+                <!-- Source boxes -->
+                <g class="node">
+                    <rect x="185" y="330" width="185" height="88" rx="12" class="box box--dashed"/>
+                    <text x="277" y="368" class="t-title2">Météo</text>
+                    <text x="277" y="392" class="t-sub">open-meteo</text>
+                </g>
+                <g class="node">
+                    <rect x="415" y="330" width="200" height="88" rx="12" class="box box--dashed"/>
+                    <text x="515" y="362" class="t-title2">tourism-service</text>
+                    <text x="515" y="384" class="t-sub">destinations, expériences,</text>
+                    <text x="515" y="400" class="t-sub">événements</text>
+                </g>
+                <g class="node">
+                    <rect x="660" y="330" width="185" height="88" rx="12" class="box box--dashed"/>
+                    <text x="752" y="368" class="t-title2">taxi-service</text>
+                    <text x="752" y="392" class="t-sub">chauffeurs en ligne</text>
+                </g>
+
+                <!-- source arrows converge to Enrichissement bottom -->
+                <line x1="277" y1="330" x2="430" y2="150" class="edge" marker-end="url(#arr2)"/>
+                <line x1="500" y1="330" x2="450" y2="150" class="edge" marker-end="url(#arr2)"/>
+                <line x1="752" y1="330" x2="468" y2="150" class="edge" marker-end="url(#arr2)"/>
+            </svg>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">-- / --</span>
+        </div>
+
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

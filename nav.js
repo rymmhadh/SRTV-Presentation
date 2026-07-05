@@ -6,11 +6,12 @@
        Position (1..total) in the talk  →  actual slide-NN folder on disk.
        This lets us reorder the narrative without renaming any folder. */
     const order = [
-        1, 2, 4, 5, 36, 8, 37, 38, 39, 28, 40, 41,
-        24, 25, 26, 27,
-        35, 44, 46, 20, 43, 15, 18, 22,
+        1, 2, 4, 5, 36, 8, 37, 38,
+        47, 48, 40, 50, 41, 49,
+        18, 44, 20, 22, 15,
+        24, 25, 26, 27, 28,
         34,
-        30, 31, 42, 32
+        30, 31, 32
     ];
 
     const path       = window.location.pathname;
@@ -44,16 +45,17 @@
         "Couverture", "Sommaire",
         "Organisme d'accueil", "Contexte : opportunité touristique",
         "Problématique", "Étude comparative",
-        "Notre solution : SRTV + Lina",
-        "Qu'est-ce que Lina ?", "Ce que Lina sait faire", "Interface Lina",
-        "Lina en action : Briefing proactif", "Lina en action : Réservation taxi",
-        "Interface Livestream", "Interface Reels", "Interface Shopping", "Interface Restaurant",
-        "Orchestration d'agents IA (n8n)", "Livestream : pipeline technique",
-        "Système de notifications", "Architecture du Projet SRTV",
-        "Besoins & Exigences", "Méthodologie Scrum", "Stack Technique & Environnement",
-        "Pipeline CI / CD SRTV",
+        "Notre solution : SRTV + Lina", "Qu'est-ce que Lina ?",
+        "Architecture de Lina", "Planification multi-jours (n8n)",
+        "Lina en action : Briefing proactif", "Briefing proactif : le workflow",
+        "Lina en action : Réservation taxi",
+        "Conversation naturelle avec Lina",
+        "Stack Technique & Environnement", "Architecture Livestream",
+        "Architecture du Projet SRTV", "Pipeline CI / CD SRTV", "Méthodologie Scrum",
+        "Interface Livestream", "Interface Reels", "Interface Shopping",
+        "Interface Restaurant", "Interface Lina",
         "Démonstration",
-        "Bilan", "Perspectives", "Vision & Impact", "Merci"
+        "Bilan", "Perspectives", "Merci"
     ];
 
     const overview = document.createElement('div');
@@ -220,7 +222,7 @@
     /* ── Mouse click navigation ── */
     /* Left click → previous slide | Right click → next slide */
     function isInteractive(el) {
-        return !!el.closest('button, a, input, textarea, select, label, [data-slide], iframe');
+        return !!el.closest('button, a, input, textarea, select, label, [data-slide], iframe, video, .video-frame');
     }
 
     document.addEventListener('click', function (e) {

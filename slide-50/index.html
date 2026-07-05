@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide : Briefing proactif — le workflow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+
+        <header class="slide__header">
+            <div class="slide__badge">
+                <span class="slide__badge-dot"></span>
+                <span>Orchestration n8n</span>
+            </div>
+            <h1 class="slide__title">Le briefing proactif, en coulisses</h1>
+            <p class="slide__subtitle">Trois fois par jour, une boucle parcourt les utilisateurs abonnés et compose, avec Claude Haiku, un message personnalisé envoyé en notification push</p>
+        </header>
+
+        <div class="diagram-panel">
+            <svg viewBox="0 0 1150 480" class="flow-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow du briefing proactif">
+                <defs>
+                    <marker id="arr3" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L7,3 L0,6 Z" fill="#334155"/>
+                    </marker>
+                </defs>
+
+                <!-- Top pipeline : 6 steps -->
+                <g class="node">
+                    <rect x="8" y="90" width="155" height="90" rx="10" class="box"/>
+                    <text x="85" y="122" class="t-title2">Déclenchement</text>
+                    <text x="85" y="145" class="t-sub">8h / 13h / 19h</text>
+                    <text x="85" y="161" class="t-sub">ou manuel</text>
+                </g>
+                <g class="node">
+                    <rect x="196" y="90" width="155" height="90" rx="10" class="box"/>
+                    <text x="273" y="130" class="t-title2">Utilisateurs</text>
+                    <text x="273" y="153" class="t-sub">push-enabled</text>
+                </g>
+                <g class="node">
+                    <rect x="384" y="90" width="155" height="90" rx="10" class="box"/>
+                    <text x="461" y="130" class="t-title2">Boucle</text>
+                    <text x="461" y="153" class="t-sub">1 utilisateur</text>
+                </g>
+                <g class="node">
+                    <rect x="572" y="90" width="155" height="90" rx="10" class="box"/>
+                    <text x="649" y="130" class="t-title2">Prompt</text>
+                    <text x="649" y="153" class="t-sub">personnalisé</text>
+                </g>
+                <g class="node">
+                    <rect x="760" y="90" width="155" height="90" rx="10" class="box box--ai"/>
+                    <text x="837" y="130" class="t-title2">Claude Haiku</text>
+                    <text x="837" y="153" class="t-sub t-sub--ai">composition</text>
+                </g>
+                <g class="node">
+                    <rect x="948" y="90" width="155" height="90" rx="10" class="box"/>
+                    <text x="1025" y="122" class="t-title2">Notification</text>
+                    <text x="1025" y="145" class="t-sub">push</text>
+                    <text x="1025" y="161" class="t-sub">(Expo)</text>
+                </g>
+
+                <!-- pipeline arrows -->
+                <line x1="163" y1="135" x2="194" y2="135" class="edge" marker-end="url(#arr3)"/>
+                <line x1="351" y1="135" x2="382" y2="135" class="edge" marker-end="url(#arr3)"/>
+                <line x1="539" y1="135" x2="570" y2="135" class="edge" marker-end="url(#arr3)"/>
+                <line x1="727" y1="135" x2="758" y2="135" class="edge" marker-end="url(#arr3)"/>
+                <line x1="915" y1="135" x2="946" y2="135" class="edge" marker-end="url(#arr3)"/>
+
+                <!-- loop back : Notification -> Boucle -->
+                <path d="M1025,90 C1025,15 461,15 461,88" class="edge" style="stroke-dasharray:7 6" marker-end="url(#arr3)"/>
+                <text x="743" y="30" class="t-loop">boucle sur chaque utilisateur</text>
+
+                <!-- Source boxes -->
+                <g class="node">
+                    <rect x="450" y="350" width="185" height="88" rx="12" class="box box--dashed"/>
+                    <text x="542" y="388" class="t-title2">Météo</text>
+                    <text x="542" y="412" class="t-sub">open-meteo</text>
+                </g>
+                <g class="node">
+                    <rect x="665" y="350" width="210" height="88" rx="12" class="box box--dashed"/>
+                    <text x="770" y="388" class="t-title2">lina-service</text>
+                    <text x="770" y="412" class="t-sub">lieux / plats aimés</text>
+                </g>
+
+                <!-- source arrows converge to Prompt bottom -->
+                <line x1="542" y1="350" x2="632" y2="182" class="edge" marker-end="url(#arr3)"/>
+                <line x1="770" y1="350" x2="666" y2="182" class="edge" marker-end="url(#arr3)"/>
+            </svg>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">-- / --</span>
+        </div>
+
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>
