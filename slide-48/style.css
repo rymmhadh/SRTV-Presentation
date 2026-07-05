@@ -325,3 +325,44 @@ html, body {
     fill: #b3480f;
     font-weight: 700;
 }
+
+/* ── Split layout : schéma + capture n8n ── */
+.slide { justify-content: center; gap: 1.1vh; padding: 2.5vh 3vw 6vh; }
+.slide__header { gap: 0.35rem; margin-bottom: 0.2vh; }
+.slide .slide__title { font-size: clamp(1.9rem, 3.3vw, 2.7rem) !important; }
+.slide__title::after { height: 4px; margin-top: 8px; }
+
+.split-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #b3480f;
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.diagram-panel { max-width: 1000px; max-height: 33vh; }
+.flow-svg { max-height: 33vh; }
+
+.capture-frame {
+    width: 100%;
+    max-width: 1120px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 18px 44px rgba(15,23,42,0.18), 0 3px 10px rgba(15,23,42,0.08);
+    border: 1px solid rgba(242,106,33,0.14);
+    padding: 8px;
+    opacity: 0;
+    transform: translateY(22px) scale(0.98);
+}
+.capture-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 27vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
