@@ -25,9 +25,9 @@
                 <span>Orchestration n8n</span>
             </div>
             <h1 class="slide__title">Le briefing proactif, en coulisses</h1>
-            <p class="slide__subtitle">Trois fois par jour, une boucle parcourt les utilisateurs abonnés et compose, avec Claude Haiku, un message personnalisé envoyé en notification push</p>
         </header>
 
+        <div class="split-label">Schéma conceptuel</div>
         <div class="diagram-panel">
             <svg viewBox="0 0 1150 480" class="flow-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow du briefing proactif">
                 <defs>
@@ -97,6 +97,11 @@
                 <line x1="542" y1="350" x2="632" y2="182" class="edge" marker-end="url(#arr3)"/>
                 <line x1="770" y1="350" x2="666" y2="182" class="edge" marker-end="url(#arr3)"/>
             </svg>
+        </div>
+
+        <div class="split-label">Implémentation dans n8n</div>
+        <div class="capture-frame">
+            <img src="workflow-briefing.png" alt="Workflow n8n du briefing : Cron 8h/13h/19h, Set Moment, Fetch Push-Enabled Users, Loop Users, Contexte + Meteo + Claude + Push, Respond">
         </div>
 
         <div class="navigation">

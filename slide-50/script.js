@@ -134,3 +134,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     setTransition(nav, 'opacity 0.8s ease, transform 0.8s ease', 1900);
 });
+
+/* Reveal split labels + capture frame */
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const labels = document.querySelectorAll('.split-label');
+    labels.forEach((el, i) => setTimeout(() => {
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.opacity = '1'; el.style.transform = 'none';
+    }, 850 + i * 400));
+    const frame = document.querySelector('.capture-frame');
+    if (frame) setTimeout(() => {
+        frame.style.transition = 'opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1)';
+        frame.style.opacity = '1'; frame.style.transform = 'none';
+    }, 1100);
+});
