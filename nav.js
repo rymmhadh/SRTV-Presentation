@@ -6,7 +6,7 @@
        Position (1..total) in the talk  →  actual slide-NN folder on disk.
        This lets us reorder the narrative without renaming any folder. */
     const order = [
-        1, 2, 4, 5, 36, 8, 37, 38,
+        1, 2, 4, 5, 8, 37, 38,
         47, 48, 40, 50, 41, 49,
         18, 44, 20, 22, 15,
         24, 25, 26, 27, 28,
@@ -44,7 +44,7 @@
     const slideTitles = [
         "Couverture", "Sommaire",
         "Organisme d'accueil", "Contexte : opportunité touristique",
-        "Problématique", "Étude comparative",
+        "Étude comparative",
         "Notre solution : SRTV + Lina", "Qu'est-ce que Lina ?",
         "Architecture de Lina", "Planification multi-jours (n8n)",
         "Lina en action : Briefing proactif", "Briefing proactif : le workflow",

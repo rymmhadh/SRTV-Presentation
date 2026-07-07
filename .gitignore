@@ -7,3 +7,5 @@ Thumbs.db
 
 # Deno / node au cas ou des deps locales sont installees
 node_modules/
+
+slide-34/demo.mp4
