@@ -125,7 +125,7 @@ html, body {
    ═══════════════════════════════════════════════════════════════ */
 .compare__matrix {
     width: 100%;
-    max-width: 1150px;
+    max-width: 1220px;
     background: rgba(255,255,255,0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -141,7 +141,7 @@ html, body {
 
 .compare__header {
     display: grid;
-    grid-template-columns: 190px repeat(6, 1fr);
+    grid-template-columns: 150px repeat(6, 1fr);
     gap: 0.3rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid rgba(242,106,33,0.14);
@@ -149,23 +149,26 @@ html, body {
 }
 
 .compare__logo {
-    height: 30px;
-    width: auto;
-    max-width: 100%;
+    width: 100%;
+    max-width: 132px;
+    height: auto;
+    max-height: 56px;
     object-fit: contain;
     display: block;
-    border-radius: 9px;
+    margin: 0 auto;
+    border-radius: 10px;
     box-shadow: 0 3px 10px rgba(15,23,42,0.14);
 }
 .compare__logo--srtv {
-    height: 40px;
-    border-radius: 10px;
+    max-width: 140px;
+    max-height: 64px;
+    border-radius: 11px;
     box-shadow: 0 6px 18px rgba(242,106,33,0.45);
 }
 
 .compare__row {
     display: grid;
-    grid-template-columns: 190px repeat(6, 1fr);
+    grid-template-columns: 150px repeat(6, 1fr);
     gap: 0.3rem;
     padding: 0.32rem 0;
     border-bottom: 1px solid rgba(0,119,204,0.04);
