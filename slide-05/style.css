@@ -384,7 +384,6 @@ html, body {
 
 
 /* Title visibility enhancement */
-.slide__title,
 .plan__title,
 .cover__title,
 .merci-title,
@@ -392,4 +391,160 @@ html, body {
     font-size: clamp(3rem, 5.5vw, 4.8rem) !important;
     font-weight: 700 !important;
     line-height: 1.1 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PHOTO HERO LAYOUT (slide 05)
+   ═══════════════════════════════════════════════════════════════ */
+.slide--photo {
+    display: block;
+    padding: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: hidden;
+    background: #0b1622;
+}
+
+.hero-photo {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image: url('../assets/Sousse-sunset.png');
+    background-size: cover;
+    background-position: center 42%;
+    transform: scale(1.02);
+    animation: heroZoom 18s ease-out forwards;
+}
+@keyframes heroZoom { to { transform: scale(1.09); } }
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+        linear-gradient(to top, rgba(8,16,28,0.94) 0%, rgba(8,16,28,0.70) 20%, rgba(8,16,28,0.12) 45%, rgba(8,16,28,0) 65%),
+        linear-gradient(to right, rgba(8,16,28,0.75) 0%, rgba(8,16,28,0.15) 40%, rgba(8,16,28,0) 70%);
+}
+
+.hero-band {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 3vh 4vw 4.5vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 3vw;
+}
+
+/* ── Left column ── */
+.hero-left {
+    text-align: left;
+    align-items: flex-start;
+    gap: 1.1rem;
+    max-width: 46%;
+    flex-shrink: 0;
+}
+
+.slide--photo .slide__title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.2rem, 3.6vw, 3.6rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.12 !important;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #ffffff;
+    background: none;
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: #ffffff;
+    background-clip: border-box;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.45);
+}
+.slide--photo .slide__title::after { display: none; content: none; }
+
+.slide--photo .slide__title .hl { color: #f26a21; -webkit-text-fill-color: #f26a21; }
+
+.slide--photo .slide__subtitle {
+    text-align: left;
+    color: rgba(255,255,255,0.86);
+    font-size: clamp(0.85rem, 1.05vw, 1.05rem);
+    line-height: 1.6;
+    max-width: 560px;
+    text-shadow: 0 1px 12px rgba(0,0,0,0.5);
+}
+.slide--photo .slide__subtitle .hl { color: #f26a21; font-weight: 600; }
+
+.hero-tagline {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: 0.6rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    width: 100%;
+}
+.hero-tagline__bar {
+    width: 4px;
+    height: 22px;
+    border-radius: 2px;
+    background: #f26a21;
+    flex-shrink: 0;
+}
+.hero-tagline__text {
+    color: rgba(255,255,255,0.92);
+    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+    letter-spacing: 0.01em;
+}
+.hero-tagline__text strong { color: #f26a21; font-weight: 700; }
+
+/* ── Right stats row ── */
+.hero-stats {
+    margin-top: 0;
+    gap: 1.6rem;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-bottom: 0.2rem;
+}
+.hero-stats .stat-item {
+    min-width: 0;
+    gap: 0.35rem;
+    max-width: 108px;
+}
+.stat-item__icon {
+    width: 26px;
+    height: 26px;
+    color: #f26a21;
+    margin-bottom: 0.15rem;
+}
+.hero-stats .stat-item__value {
+    font-size: clamp(1.4rem, 1.9vw, 1.9rem);
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+    color: #ffffff;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+    white-space: nowrap;
+}
+.hero-stats .stat-item__label {
+    color: rgba(255,255,255,0.80);
+    font-size: 0.66rem;
+    line-height: 1.3;
+    max-width: 110px;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.55);
+}
+
+/* Footer nav on dark photo */
+.slide--photo ~ .navigation,
+.slide--photo .navigation { z-index: 12; }
+
+@media (max-width: 1100px) {
+    .hero-band { flex-direction: column; align-items: flex-start; gap: 1.6rem; }
+    .hero-left { max-width: 100%; }
+    .hero-stats { justify-content: flex-start; flex-wrap: wrap; gap: 1.2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-photo { animation: none !important; transform: none !important; }
 }
