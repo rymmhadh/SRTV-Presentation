@@ -265,17 +265,9 @@ document.addEventListener('DOMContentLoaded', () => {
         linaAudio.play().catch(() => {}); // ignore autoplay block
     }
 
-    // Play LINA tracks automatically for specific images
+    // Narration Lina désactivée : plus aucune voix ne se joue dans la galerie
     function syncLinaWithGallery() {
-        if (currentIndex === 4) {
-            playLinaTrack(0); // SRTV-Presentation(5).jpg -> Slide1.mp3
-        } else if (currentIndex === 5) {
-            playLinaTrack(1); // SRTV-Presentation(7).jpg -> Slide2.mp3
-        } else if (currentIndex === 6) {
-            playLinaTrack(2); // SRTV-Presentation(8).jpg -> Slide3.mp3
-        } else {
-            stopLina();
-        }
+        stopLina();
     }
 
     // Stop audio if gallery is manually closed
