@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide : Microservices vs Monolithe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+
+        <header class="slide__header">
+            <div class="slide__badge">
+                <span class="slide__badge-dot"></span>
+                <span>Fondements techniques</span>
+            </div>
+            <h1 class="slide__title">Microservices vs Monolithe</h1>
+            <p class="slide__subtitle">Pourquoi SRTV a été découpé en six services autonomes plutôt qu'assemblé en un bloc unique</p>
+        </header>
+
+        <div class="versus">
+            <div class="versus__col versus__col--mono">
+                <div class="versus__head">
+                    <span class="vhead-icon vhead-icon--mono">▣</span>
+                    <div>
+                        <div class="versus__title">Monolithe</div>
+                        <div class="versus__tag">Un seul déployable</div>
+                    </div>
+                </div>
+                <ul class="vlist vlist--mono">
+                    <li><span class="vmark">✕</span> Couplage fort entre les modules</li>
+                    <li><span class="vmark">✕</span> Cycles de déploiement longs et risqués</li>
+                    <li><span class="vmark">✕</span> Une panne peut arrêter tout le système</li>
+                    <li><span class="vmark">✕</span> Scalabilité globale, coûteuse en ressources</li>
+                    <li><span class="vmark">✕</span> Stack technologique unique et imposée</li>
+                </ul>
+            </div>
+
+            <div class="versus__vs">VS</div>
+
+            <div class="versus__col versus__col--micro">
+                <div class="versus__head">
+                    <span class="vhead-icon vhead-icon--micro">⬡</span>
+                    <div>
+                        <div class="versus__title">Microservices</div>
+                        <div class="versus__tag">Six services autonomes</div>
+                    </div>
+                </div>
+                <ul class="vlist vlist--micro">
+                    <li><span class="vmark vmark--ok">✓</span> Organisés par capacité métier (DDD)</li>
+                    <li><span class="vmark vmark--ok">✓</span> Base de données isolée par service</li>
+                    <li><span class="vmark vmark--ok">✓</span> Déploiement indépendant, sans régression</li>
+                    <li><span class="vmark vmark--ok">✓</span> Panne isolée (circuit breaker)</li>
+                    <li><span class="vmark vmark--ok">✓</span> Scalabilité sélective + hétérogénéité techno</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="versus__note">
+            <span class="versus__note-bar"></span>
+            Résultat pour SRTV : équipes autonomes, livraisons sûres, et montée en charge ciblée par domaine.
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">-- / --</span>
+        </div>
+
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

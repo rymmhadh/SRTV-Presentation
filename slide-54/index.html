@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide : Pourquoi n8n</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+
+        <header class="slide__header">
+            <div class="slide__badge">
+                <span class="slide__badge-dot"></span>
+                <span>Orchestration &amp; automatisation</span>
+            </div>
+            <h1 class="slide__title">Pourquoi n8n ?</h1>
+            <p class="slide__subtitle">Avant de détailler les workflows : ce que n8n apporte à l'orchestration des agents de Lina — une plateforme low-code, open source et auto-hébergeable</p>
+        </header>
+
+        <div class="modules__label">Ce que n8n apporte</div>
+        <div class="modules__grid modules__grid--four">
+            <div class="module__card" data-delay="1">
+                <div class="module__accent module__accent--orange"></div>
+                <div class="module__icon module__icon--orange">◇</div>
+                <h3 class="module__name">Low-code &amp; open source</h3>
+                <p class="module__desc">Workflows visuels, auto-hébergés, sans dépendance propriétaire ni coût de licence</p>
+            </div>
+            <div class="module__card" data-delay="2">
+                <div class="module__accent module__accent--ink"></div>
+                <div class="module__icon module__icon--ink">⚡</div>
+                <h3 class="module__name">Rapide à mettre en œuvre</h3>
+                <p class="module__desc">Assemble des blocs préexistants au lieu de coder un microservice dédié pour chaque automatisation</p>
+            </div>
+            <div class="module__card" data-delay="3">
+                <div class="module__accent module__accent--orange"></div>
+                <div class="module__icon module__icon--orange">⛓</div>
+                <h3 class="module__name">Orchestration d'agents IA</h3>
+                <p class="module__desc">Collecte multi-sources → prompt contextualisé → appel du LLM → distribution du résultat</p>
+            </div>
+            <div class="module__card" data-delay="4">
+                <div class="module__accent module__accent--ink"></div>
+                <div class="module__icon module__icon--ink">◎</div>
+                <h3 class="module__name">Complète MCP</h3>
+                <p class="module__desc">MCP donne les outils au modèle ; n8n orchestre la chaîne d'actions, y compris de façon proactive</p>
+            </div>
+        </div>
+
+        <div class="modules__label">Structure générique d'un workflow n8n</div>
+        <div class="diagram-panel">
+            <svg viewBox="0 0 1000 150" class="flow-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Structure générique d'un workflow n8n : déclencheur webhook ou schedule, nœud Set de préparation, nœud HTTP Request vers une API ou microservice, puis réponse ou notification">
+                <defs>
+                    <marker id="arrW" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L7,3 L0,6 Z" fill="#334155"/>
+                    </marker>
+                </defs>
+                <g class="node">
+                    <rect x="15" y="30" width="210" height="88" rx="12" class="box"/>
+                    <text x="120" y="70" class="t-title2">Déclencheur</text>
+                    <text x="120" y="93" class="t-sub">Webhook · Schedule</text>
+                </g>
+                <g class="node">
+                    <rect x="262" y="30" width="210" height="88" rx="12" class="box"/>
+                    <text x="367" y="70" class="t-title2">Set</text>
+                    <text x="367" y="93" class="t-sub">préparation des données</text>
+                </g>
+                <g class="node">
+                    <rect x="509" y="30" width="210" height="88" rx="12" class="box"/>
+                    <text x="614" y="70" class="t-title2">HTTP Request</text>
+                    <text x="614" y="93" class="t-sub">API ou microservice</text>
+                </g>
+                <g class="node">
+                    <rect x="756" y="30" width="210" height="88" rx="12" class="box box--ai"/>
+                    <text x="861" y="70" class="t-title2">Respond</text>
+                    <text x="861" y="93" class="t-sub t-sub--ai">réponse / notification</text>
+                </g>
+                <line x1="225" y1="74" x2="260" y2="74" class="edge" marker-end="url(#arrW)"/>
+                <line x1="472" y1="74" x2="507" y2="74" class="edge" marker-end="url(#arrW)"/>
+                <line x1="719" y1="74" x2="754" y2="74" class="edge" marker-end="url(#arrW)"/>
+            </svg>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">-- / --</span>
+        </div>
+
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

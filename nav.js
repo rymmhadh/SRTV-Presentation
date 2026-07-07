@@ -7,8 +7,8 @@
        This lets us reorder the narrative without renaming any folder. */
     const order = [
         1, 2, 4, 5, 8, 37, 38,
-        47, 48, 40, 50, 41, 49,
-        18, 44, 52, 20, 22, 15,
+        47, 54, 48, 40, 50, 41, 49,
+        18, 44, 52, 20, 53, 22, 15,
         24, 25, 26, 27, 28,
         34,
         30, 31, 32
@@ -46,13 +46,13 @@
         "Organisme d'accueil", "Contexte : opportunité touristique",
         "Étude comparative",
         "Notre solution : SRTV + Lina", "Qu'est-ce que Lina ?",
-        "Architecture de Lina", "Planification multi-jours (n8n)",
+        "Architecture de Lina", "Pourquoi n8n ?", "Planification multi-jours (n8n)",
         "Lina en action : Briefing proactif", "Briefing proactif : le workflow",
         "Lina en action : Réservation taxi",
         "Conversation naturelle avec Lina",
         "Stack Technique & Environnement", "Architecture Livestream",
         "Architecture événementielle (Kafka)",
-        "Architecture du Projet SRTV", "Pipeline CI / CD SRTV", "Méthodologie Scrum",
+        "Architecture du Projet SRTV", "Microservices vs Monolithe", "Pipeline CI / CD SRTV", "Méthodologie Scrum",
         "Interface Livestream", "Interface Reels", "Interface Shopping",
         "Interface Restaurant", "Interface Lina",
         "Démonstration",

@@ -1,0 +1,275 @@
+/* Slide : Livestream — pipeline technique (HLS + FFmpeg) */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(160deg, #f0f4f8 0%, #f8fafc 50%, #eef2f7 100%);
+    color: #1e293b;
+    overflow: hidden;
+}
+
+.ambient-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(140px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+}
+.orb-1 {
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(242,106,33,0.16) 0%, transparent 70%);
+    top: -12%; right: -8%;
+    animation: orbFloat1 40s ease-in-out infinite alternate, orbAppear 2s ease forwards;
+}
+.orb-2 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(17,17,17,0.08) 0%, transparent 70%);
+    bottom: -10%; left: -10%;
+    animation: orbFloat2 48s ease-in-out infinite alternate, orbAppear 2s ease 0.4s forwards;
+}
+.orb-3 {
+    width: 450px; height: 450px;
+    background: radial-gradient(circle, rgba(242,106,33,0.1) 0%, transparent 70%);
+    top: 35%; left: 30%;
+    animation: orbFloat3 56s ease-in-out infinite alternate, orbAppear 2s ease 0.8s forwards;
+}
+@keyframes orbAppear { to { opacity: 1; } }
+@keyframes orbFloat1 { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(-60px,70px) scale(1.08)} }
+@keyframes orbFloat2 { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(50px,-60px) scale(1.06)} }
+@keyframes orbFloat3 { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(40px,45px) scale(1.1)} }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(1.25)} }
+
+#bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+
+.slide {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5vh 3vw 8vh;
+    gap: 2.2vh;
+}
+
+.slide__header {
+    text-align: center;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.slide__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #334155;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(242, 106, 33, 0.18);
+    border-radius: 14px;
+    padding: 0.5rem 1.1rem;
+    box-shadow: 0 4px 18px rgba(242, 106, 33, 0.1);
+    backdrop-filter: blur(8px);
+}
+
+.slide__badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f26a21, #c74812);
+    box-shadow: 0 0 0 3px rgba(242, 106, 33, 0.14);
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+.slide__title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.2rem, 3.6vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    transform: translateY(15px);
+    color: #0f172a;
+}
+.slide__title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(90deg, #c74812, #f26a21);
+    border-radius: 3px;
+    margin: 12px auto 0;
+    transform: scaleX(0);
+    animation: lineGrow 0.7s ease 1s forwards;
+}
+@keyframes lineGrow { to { transform: scaleX(1); } }
+
+.slide__subtitle {
+    font-size: clamp(0.9rem, 1.15vw, 1.05rem);
+    color: #475569;
+    max-width: 760px;
+    line-height: 1.55;
+    opacity: 0;
+    transform: translateY(10px);
+    font-weight: 400;
+}
+
+.modules__label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #64748b;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.modules__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 1180px;
+}
+
+.modules__grid--three {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+}
+
+.modules__grid--four {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1060px;
+}
+
+.module__card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 1.1rem 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.4rem;
+    box-shadow: 0 8px 30px rgba(15,23,42,0.05), 0 1px 4px rgba(15,23,42,0.03);
+    border: 1px solid rgba(242,106,33,0.08);
+    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    position: relative;
+    overflow: hidden;
+}
+
+.module__accent {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+}
+.module__accent--orange  { background: linear-gradient(90deg, #f26a21, #f7943f); }
+.module__accent--ink     { background: linear-gradient(90deg, #111111, #3a3a3a); }
+
+.module__card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 18px 45px rgba(15,23,42,0.09), 0 3px 8px rgba(15,23,42,0.04);
+}
+
+.module__icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+}
+.module__icon--orange { background: linear-gradient(135deg, #f26a21, #f7943f); box-shadow: 0 6px 16px rgba(242,106,33,0.3); }
+.module__icon--ink    { background: linear-gradient(135deg, #111111, #3a3a3a); box-shadow: 0 6px 16px rgba(17,17,17,0.25); }
+
+.module__name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.module__desc {
+    font-size: 0.76rem;
+    line-height: 1.5;
+    color: #64748b;
+}
+
+.navigation {
+    position: fixed;
+    bottom: 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    opacity: 0;
+}
+
+.nav-year {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #64748b;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(14px);
+    padding: 0.6rem 1.4rem;
+    border-radius: 14px;
+    border: 1px solid rgba(242,106,33,0.14);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ambient-orb, .slide__header, .slide__title, .slide__subtitle,
+    .modules__label, .module__card, .navigation {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}
+
+.slide__title, .plan__title, .cover__title, .merci-title, .demo-title {
+    font-size: clamp(2.6rem, 4.6vw, 3.8rem) !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+}
+
+@media (max-width: 900px) {
+    .modules__grid { grid-template-columns: repeat(2, 1fr); }
+    .modules__grid--three { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Flowchart diagram (style organigramme) ── */
+.diagram-panel { width: 100%; max-width: 1100px; opacity: 0; transform: translateY(24px); }
+.flow-svg { width: 100%; height: auto; max-height: 62vh; display: block; }
+.flow-svg .box { fill: #ffffff; stroke: #94a3b8; stroke-width: 1.6; filter: drop-shadow(0 6px 16px rgba(15,23,42,0.08)); }
+.flow-svg .box--ai { fill: #e9edf3; stroke: #475569; stroke-width: 2; }
+.flow-svg .box--dashed { fill: #ffffff; stroke: #94a3b8; stroke-width: 1.6; stroke-dasharray: 6 5; filter: none; }
+.flow-svg .edge { stroke: #334155; stroke-width: 2; fill: none; }
+.flow-svg .t-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 20px; fill: #0f172a; text-anchor: middle; }
+.flow-svg .t-title2 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 18px; fill: #0f172a; text-anchor: middle; }
+.flow-svg .t-sub { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 14px; fill: #475569; text-anchor: middle; }
+.flow-svg .t-sub--ai { fill: #b3480f; font-weight: 700; }
+.flow-svg .t-section { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 15px; fill: #64748b; text-anchor: middle; letter-spacing: 0.04em; }
