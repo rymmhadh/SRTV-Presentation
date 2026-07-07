@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide : Architecture événementielle (Kafka)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+
+        <header class="slide__header">
+            <div class="slide__badge">
+                <span class="slide__badge-dot"></span>
+                <span>Deep dive technique</span>
+            </div>
+            <h1 class="slide__title">L'architecture événementielle</h1>
+            <p class="slide__subtitle">Apache Kafka orchestre la communication asynchrone entre les six microservices : chaque service publie et consomme des événements via des topics, sans connaître ses interlocuteurs — découplage temporel et spatial</p>
+        </header>
+
+        <div class="diagram-panel">
+            <svg viewBox="0 0 1000 500" class="flow-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Architecture orientée événements : six microservices SRTV (user, tourism, taxi, livestream, reels, lina) publient et consomment des événements via le broker Apache Kafka organisé en topics par domaine">
+                <defs>
+                    <marker id="arrPub" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L7,3 L0,6 Z" fill="#c74812"/>
+                    </marker>
+                    <marker id="arrSub" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L7,3 L0,6 Z" fill="#475569"/>
+                    </marker>
+                </defs>
+
+                <!-- ═══ Producteurs / consommateurs (haut) ═══ -->
+                <g class="node">
+                    <rect x="45" y="48" width="210" height="80" rx="12" class="box"/>
+                    <text x="150" y="82" class="t-svc">user-service</text>
+                    <text x="150" y="104" class="t-sub">comptes &amp; auth (Keycloak)</text>
+                </g>
+                <g class="node">
+                    <rect x="395" y="48" width="210" height="80" rx="12" class="box"/>
+                    <text x="500" y="82" class="t-svc">tourism-service</text>
+                    <text x="500" y="104" class="t-sub">découverte &amp; réservations</text>
+                </g>
+                <g class="node">
+                    <rect x="745" y="48" width="210" height="80" rx="12" class="box"/>
+                    <text x="850" y="82" class="t-svc">taxi-service</text>
+                    <text x="850" y="104" class="t-sub">mobilité temps réel</text>
+                </g>
+
+                <!-- arrows top : publish (down, orange) + subscribe (up, slate) -->
+                <line x1="141" y1="128" x2="141" y2="198" class="edge edge--pub" marker-end="url(#arrPub)"/>
+                <line x1="159" y1="200" x2="159" y2="130" class="edge" marker-end="url(#arrSub)"/>
+                <line x1="491" y1="128" x2="491" y2="198" class="edge edge--pub" marker-end="url(#arrPub)"/>
+                <line x1="509" y1="200" x2="509" y2="130" class="edge" marker-end="url(#arrSub)"/>
+                <line x1="841" y1="128" x2="841" y2="198" class="edge edge--pub" marker-end="url(#arrPub)"/>
+                <line x1="859" y1="200" x2="859" y2="130" class="edge" marker-end="url(#arrSub)"/>
+
+                <!-- ═══ Broker Kafka ═══ -->
+                <rect x="45" y="200" width="910" height="110" rx="16" class="kafka-band"/>
+                <text x="500" y="234" class="t-kafka">Apache Kafka — courtier d'événements</text>
+
+                <g>
+                    <rect x="95" y="252" width="185" height="42" rx="21" class="topic-pill"/>
+                    <text x="187" y="279" class="t-topic">user-events</text>
+                </g>
+                <g>
+                    <rect x="300" y="252" width="185" height="42" rx="21" class="topic-pill"/>
+                    <text x="392" y="279" class="t-topic">tourism-events</text>
+                </g>
+                <g>
+                    <rect x="515" y="252" width="185" height="42" rx="21" class="topic-pill"/>
+                    <text x="607" y="279" class="t-topic">ride-events</text>
+                </g>
+                <g>
+                    <rect x="720" y="252" width="185" height="42" rx="21" class="topic-pill"/>
+                    <text x="812" y="279" class="t-topic">media-events</text>
+                </g>
+
+                <!-- arrows bottom : publish (up, orange) + subscribe (down, slate) -->
+                <line x1="141" y1="382" x2="141" y2="312" class="edge edge--pub" marker-end="url(#arrPub)"/>
+                <line x1="159" y1="310" x2="159" y2="380" class="edge" marker-end="url(#arrSub)"/>
+                <line x1="491" y1="382" x2="491" y2="312" class="edge edge--pub" marker-end="url(#arrPub)"/>
+                <line x1="509" y1="310" x2="509" y2="380" class="edge" marker-end="url(#arrSub)"/>
+                <line x1="841" y1="382" x2="841" y2="312" class="edge edge--pub" marker-end="url(#arrPub)"/>
+                <line x1="859" y1="310" x2="859" y2="380" class="edge" marker-end="url(#arrSub)"/>
+
+                <!-- ═══ Producteurs / consommateurs (bas) ═══ -->
+                <g class="node">
+                    <rect x="45" y="382" width="210" height="80" rx="12" class="box"/>
+                    <text x="150" y="416" class="t-svc">livestream-service</text>
+                    <text x="150" y="438" class="t-sub">diffusion HLS</text>
+                </g>
+                <g class="node">
+                    <rect x="395" y="382" width="210" height="80" rx="12" class="box"/>
+                    <text x="500" y="416" class="t-svc">reels-service</text>
+                    <text x="500" y="438" class="t-sub">vidéos courtes</text>
+                </g>
+                <g class="node">
+                    <rect x="745" y="382" width="210" height="80" rx="12" class="box"/>
+                    <text x="850" y="416" class="t-svc">lina-service</text>
+                    <text x="850" y="438" class="t-sub">assistante IA</text>
+                </g>
+
+                <!-- légende -->
+                <rect x="212" y="479" width="14" height="14" rx="3" fill="#c74812"/>
+                <text x="232" y="491" class="t-legend" style="text-anchor:start">publie</text>
+                <rect x="300" y="479" width="14" height="14" rx="3" fill="#475569"/>
+                <text x="320" y="491" class="t-legend" style="text-anchor:start">consomme</text>
+                <text x="432" y="491" class="t-legend" style="text-anchor:start">·  persistance durable, garantie exactly-once, rejouable</text>
+            </svg>
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">-- / --</span>
+        </div>
+
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>

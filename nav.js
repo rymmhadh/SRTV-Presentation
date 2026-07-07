@@ -8,7 +8,7 @@
     const order = [
         1, 2, 4, 5, 8, 37, 38,
         47, 48, 40, 50, 41, 49,
-        18, 44, 20, 22, 15,
+        18, 44, 52, 20, 22, 15,
         24, 25, 26, 27, 28,
         34,
         30, 31, 32
@@ -51,6 +51,7 @@
         "Lina en action : Réservation taxi",
         "Conversation naturelle avec Lina",
         "Stack Technique & Environnement", "Architecture Livestream",
+        "Architecture événementielle (Kafka)",
         "Architecture du Projet SRTV", "Pipeline CI / CD SRTV", "Méthodologie Scrum",
         "Interface Livestream", "Interface Reels", "Interface Shopping",
         "Interface Restaurant", "Interface Lina",
