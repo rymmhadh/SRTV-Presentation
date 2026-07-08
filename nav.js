@@ -12,8 +12,8 @@
         38, 47, 61, 54, 48, 40, 50, 49,
         41, 60, 62, 63, 64,
         44, 65,
-        24, 25, 26, 27, 28,
         22, 15,
+        24, 25, 26, 27, 28,
         34,
         30, 31, 32
     ];
@@ -55,9 +55,9 @@
         "Pourquoi n8n ?", "Planification multi-jours (n8n)", "Lina en action : Briefing proactif", "Briefing proactif : le workflow", "Conversation naturelle avec Lina",
         "Lina en action : Réservation taxi", "Diagramme de classes du taxi service", "Diagramme de séquence : suivi de course", "Réservation taxi : le workflow n8n", "Taxi : notifications & reçu (n8n)",
         "Architecture Livestream", "Diagramme de séquence : publier un message",
+        "Pipeline CI / CD SRTV", "Méthodologie Scrum",
         "Interface Livestream", "Interface Reels", "Interface Shopping",
         "Interface Restaurant", "Interface Lina",
-        "Pipeline CI / CD SRTV", "Méthodologie Scrum",
         "Démonstration",
         "Bilan", "Perspectives", "Merci"
     ];
