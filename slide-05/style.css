@@ -409,22 +409,25 @@ html, body {
     color: #f26a21 !important;
     text-shadow: 0 2px 16px rgba(0,0,0,0.55);
 }
-x: 1;
-    background-image: url('../assets/Sousse-sunset.png');
-    background-size: cover;
-    background-position: center 42%;
-    transform: scale(1.02);
-    animation: heroZoom 18s ease-out forwards;
-}
-@keyframes heroZoom { to { transform: scale(1.09); } }
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    background:
-        linear-gradient(to top, rgba(8,16,28,0.94) 0%, rgba(8,16,28,0.70) 20%, rgba(8,16,28,0.12) 45%, rgba(8,16,28,0) 65%),
-        linear-gradient(to right, rgba(8,16,28,0.75) 0%, rgba(8,16,28,0.15) 40%, rgba(8,16,28,0) 70%);
+/* Titre blanc sur la photo (specificite > theme.css) */
+.slide--photo .slide__title {
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #ffffff !important;
+    color: #ffffff !important;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.65);
+}
+.slide--photo .slide__title .hl {
+    -webkit-text-fill-color: #f26a21 !important;
+    color: #f26a21 !important;
+}
+.slide--photo .slide__subtitle {
+    color: #f1f5f9 !important;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.6);
+}
+%);
 }
 
 .hero-band {
