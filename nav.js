@@ -56,7 +56,7 @@
         "Conversation naturelle avec Lina",
         "Stack Technique & Environnement", "Architecture Livestream", "Architecture événementielle (Kafka)",
         "Architecture du Projet SRTV", "Microservices vs Monolithe",
-        "Diagramme de classes — taxi-service", "Diagramme de séquence — Suivi de course", "Diagramme de séquence — Conversation Lina",
+        "Diagramme de classes du taxi service", "Diagramme de séquence : suivi de course", "Diagramme de séquence : conversation avec Lina",
         "Pipeline CI / CD SRTV", "Méthodologie Scrum",
         "Interface Livestream", "Interface Reels", "Interface Shopping",
         "Interface Restaurant", "Interface Lina",
