@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide : Diagramme de séquence — livestream</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../nav-hint.css">
+    <link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <div class="slide">
+        <header class="slide__header">
+            <div class="slide__badge">
+                <span class="slide__badge-dot"></span>
+                <span>Conception &middot; UML</span>
+            </div>
+            <h1 class="slide__title">Diagramme de séquence : publier un message en direct</h1>
+            <p class="slide__subtitle">Le chat du livestream en temps réel : de l'envoi du message à sa diffusion via WebSocket, avec publication d'un événement Kafka (et reprise par outbox en cas de panne) — cliquez pour agrandir</p>
+        </header>
+
+        <div class="capture-frame">
+            <img src="img.png" alt="Diagramme de séquence : publier un message dans le chat du livestream, avec WebSocket et Kafka">
+        </div>
+
+        <div class="navigation">
+            <span class="nav-year">-- / --</span>
+        </div>
+    </div>
+
+    <script src="../slide-enter.js"></script>
+    <script src="script.js"></script>
+    <script src="../nav.js"></script>
+    <script src="../transition.js"></script>
+</body>
+</html>
