@@ -188,3 +188,6 @@ button,
 .gallery__btn {
     border-color: rgba(242, 106, 33, 0.35) !important;
 }
+
+/* ── Masquer tous les badges (pills) sur toutes les slides ── */
+.slide__badge { display: none !important; }

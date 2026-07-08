@@ -393,22 +393,23 @@ html, body {
     line-height: 1.1 !important;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   PHOTO HERO LAYOUT (slide 05)
-   ═══════════════════════════════════════════════════════════════ */
-.slide--photo {
-    display: block;
-    padding: 0;
-    align-items: stretch;
-    justify-content: flex-start;
-    overflow: hidden;
-    background: #0b1622;
+/* ════════════════════════════════════�
+/* ── Titre lisible sur image sombre : texte blanc, mots orange ── */
+.slide__title {
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #ffffff !important;
+    color: #ffffff !important;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.6);
 }
-
-.hero-photo {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
+.slide__title .hl {
+    background: none !important;
+    -webkit-text-fill-color: #f26a21 !important;
+    color: #f26a21 !important;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.55);
+}
+x: 1;
     background-image: url('../assets/Sousse-sunset.png');
     background-size: cover;
     background-position: center 42%;
