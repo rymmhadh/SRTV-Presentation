@@ -552,3 +552,33 @@ html, body {
 @media (prefers-reduced-motion: reduce) {
     .hero-photo { animation: none !important; transform: none !important; }
 }
+
+/* ── Photo de fond du hero (restauree) ── */
+.slide--photo { position: relative; overflow: hidden; }
+.hero-photo {
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/Sousse-sunset.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(8,12,20,0.78) 0%, rgba(8,12,20,0.45) 55%, rgba(8,12,20,0.22) 100%);
+    z-index: 1;
+}
+.slide--photo .hero-band,
+.slide--photo .navigation { position: relative; z-index: 2; }
+/* Titre blanc sur la photo (spec > theme.css) */
+.slide--photo .slide__title {
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #ffffff !important;
+    color: #ffffff !important;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.6);
+}
+.slide--photo .slide__title .hl { -webkit-text-fill-color: #f26a21 !important; color: #f26a21 !important; }
+.slide--photo .slide__subtitle { color: #f1f5f9 !important; text-shadow: 0 1px 10px rgba(0,0,0,0.55); }
