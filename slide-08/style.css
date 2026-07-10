@@ -150,20 +150,24 @@ html, body {
 
 .compare__logo {
     width: 100%;
-    max-width: 132px;
-    height: auto;
-    max-height: 56px;
+    max-width: 118px;
+    height: 46px;
     object-fit: contain;
     display: block;
     margin: 0 auto;
+    background: #ffffff;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    border: 1px solid rgba(15,23,42,0.06);
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(15,23,42,0.14);
+    box-shadow: 0 3px 10px rgba(15,23,42,0.10);
 }
 .compare__logo--srtv {
-    max-width: 140px;
-    max-height: 64px;
-    border-radius: 11px;
-    box-shadow: 0 6px 18px rgba(242,106,33,0.45);
+    max-width: 118px;
+    height: 46px;
+    border: 1px solid rgba(242,106,33,0.25);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(242,106,33,0.35);
 }
 
 .compare__row {
