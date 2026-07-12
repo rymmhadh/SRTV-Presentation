@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 800" font-family="'Outfit','Inter',Segoe UI,sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1300" height="800" rx="18" fill="#ffffff"/>
+
+  <!-- Lifelines -->
+  <g stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="5 6">
+    <line x1="90"   y1="66" x2="90"   y2="740"/>
+    <line x1="370"  y1="66" x2="370"  y2="740"/>
+    <line x1="650"  y1="66" x2="650"  y2="740"/>
+    <line x1="930"  y1="66" x2="930"  y2="740"/>
+    <line x1="1210" y1="66" x2="1210" y2="740"/>
+  </g>
+
+  <!-- Phase frames -->
+  <g fill="none" stroke="#94a3b8" stroke-width="1.3">
+    <rect x="44" y="96" width="1212" height="150" rx="8"/>
+    <rect x="44" y="290" width="1212" height="404" rx="8"/>
+  </g>
+  <g font-size="12.5" font-weight="700" fill="#ffffff">
+    <path d="M44,96 h116 v18 l-10,10 h-106 z" fill="#0077CC"/>
+    <text x="54" y="112">Passage en ligne</text>
+    <path d="M44,290 h214 v18 l-10,10 h-204 z" fill="#F26A21"/>
+    <text x="54" y="306">Boucle · toutes les 5 secondes</text>
+  </g>
+
+  <!-- Activation bars -->
+  <rect x="363" y="128" width="14" height="100" rx="3" fill="#dbeafe" stroke="#0077CC" stroke-width="1"/>
+  <rect x="643" y="172" width="14" height="56"  rx="3" fill="#dbeafe" stroke="#0077CC" stroke-width="1"/>
+  <rect x="363" y="330" width="14" height="330" rx="3" fill="#dbeafe" stroke="#0077CC" stroke-width="1"/>
+  <rect x="643" y="470" width="14" height="150" rx="3" fill="#dbeafe" stroke="#0077CC" stroke-width="1"/>
+
+  <!-- Participant header boxes -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <g><rect x="20"   y="24" width="140" height="42" rx="9" fill="#0f172a"/><text x="90"   y="50" fill="#fff">Chauffeur</text></g>
+    <g><rect x="286"  y="24" width="168" height="42" rx="9" fill="#0077CC"/><text x="370"  y="50" fill="#fff">Application chauffeur</text></g>
+    <g><rect x="576"  y="24" width="148" height="42" rx="9" fill="#0077CC"/><text x="650"  y="50" fill="#fff">Service Taxi</text></g>
+    <g><rect x="866"  y="24" width="128" height="42" rx="9" fill="#0077CC"/><text x="930"  y="50" fill="#fff">Carte</text></g>
+    <g><rect x="1146" y="24" width="128" height="42" rx="9" fill="#0077CC"/><text x="1210" y="50" fill="#fff">Kafka</text></g>
+  </g>
+
+  <!-- Messages -->
+  <g font-size="13.5" fill="#0f172a" text-anchor="middle">
+
+    <!-- 1 -->
+    <line x1="90" y1="150" x2="358" y2="150" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="224" y="142">Active le mode en ligne</text>
+    <circle cx="90" cy="150" r="10" fill="#F26A21"/><text x="90" y="154" fill="#fff" font-size="12" font-weight="700">1</text>
+
+    <!-- 2 -->
+    <line x1="377" y1="196" x2="642" y2="196" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="510" y="188">Passe le chauffeur en ligne (token JWT)</text>
+    <circle cx="370" cy="196" r="10" fill="#F26A21"/><text x="370" y="200" fill="#fff" font-size="12" font-weight="700">2</text>
+
+    <!-- return online -->
+    <line x1="643" y1="228" x2="380" y2="228" stroke="#64748b" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+    <text x="512" y="220" fill="#475569">Statut en ligne confirmé</text>
+
+    <!-- 3 self GPS -->
+    <path d="M377,352 h56 v30 h-56" fill="none" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="446" y="360" text-anchor="start">Récupère la position GPS</text>
+    <circle cx="370" cy="352" r="10" fill="#F26A21"/><text x="370" y="356" fill="#fff" font-size="12" font-weight="700">3</text>
+
+    <!-- 4 to Carte -->
+    <line x1="377" y1="422" x2="926" y2="422" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="650" y="414">Met à jour la carte (marqueur + itinéraire)</text>
+    <circle cx="370" cy="422" r="10" fill="#F26A21"/><text x="370" y="426" fill="#fff" font-size="12" font-weight="700">4</text>
+
+    <!-- 5 to Service Taxi -->
+    <line x1="377" y1="478" x2="642" y2="478" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="510" y="470">Envoie la position</text>
+    <circle cx="370" cy="478" r="10" fill="#F26A21"/><text x="370" y="482" fill="#fff" font-size="12" font-weight="700">5</text>
+
+    <!-- 6 to Kafka -->
+    <line x1="657" y1="534" x2="1206" y2="534" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="930" y="526">Publie la position (si course en cours)</text>
+    <circle cx="650" cy="534" r="10" fill="#F26A21"/><text x="650" y="538" fill="#fff" font-size="12" font-weight="700">6</text>
+
+    <!-- note under kafka -->
+    <text x="930" y="566" font-size="12.5" fill="#F26A21" font-weight="600">→ transmise au voyageur + recalcul du tarif</text>
+
+    <!-- return ok -->
+    <line x1="643" y1="612" x2="380" y2="612" stroke="#64748b" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+    <text x="512" y="604" fill="#475569">Position enregistrée</text>
+  </g>
+
+  <!-- Footer markers -->
+  <g font-size="12.5" font-weight="600" text-anchor="middle" fill="#64748b">
+    <text x="90"   y="762">Chauffeur</text>
+    <text x="370"  y="762">Application chauffeur</text>
+    <text x="650"  y="762">Service Taxi</text>
+    <text x="930"  y="762">Carte</text>
+    <text x="1210" y="762">Kafka</text>
+  </g>
+</svg>
