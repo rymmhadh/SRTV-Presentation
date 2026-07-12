@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 660" font-family="'Outfit','Inter',Segoe UI,sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/>
+    </marker>
+    <marker id="arrowO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#F26A21"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1300" height="660" rx="18" fill="#ffffff"/>
+
+  <!-- Lifelines -->
+  <g stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="5 6">
+    <line x1="80"   y1="66" x2="80"   y2="600"/>
+    <line x1="308"  y1="66" x2="308"  y2="600"/>
+    <line x1="536"  y1="66" x2="536"  y2="600"/>
+    <line x1="764"  y1="66" x2="764"  y2="600"/>
+    <line x1="992"  y1="66" x2="992"  y2="600"/>
+    <line x1="1220" y1="66" x2="1220" y2="600"/>
+  </g>
+
+  <!-- Activation bar on Service Livestream -->
+  <rect x="529" y="150" width="14" height="410" rx="3" fill="#dbeafe" stroke="#0077CC" stroke-width="1"/>
+
+  <!-- Participant header boxes -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <g>
+      <rect x="20"   y="24" width="120" height="42" rx="9" fill="#0f172a"/>
+      <text x="80"   y="50" fill="#ffffff">Utilisateur</text>
+    </g>
+    <g>
+      <rect x="240"  y="24" width="136" height="42" rx="9" fill="#0077CC"/>
+      <text x="308"  y="50" fill="#ffffff">Application Web</text>
+    </g>
+    <g>
+      <rect x="456"  y="24" width="160" height="42" rx="9" fill="#0077CC"/>
+      <text x="536"  y="50" fill="#ffffff">Service Livestream</text>
+    </g>
+    <g>
+      <rect x="700"  y="24" width="128" height="42" rx="9" fill="#0077CC"/>
+      <text x="764"  y="50" fill="#ffffff">PostgreSQL</text>
+    </g>
+    <g>
+      <rect x="936"  y="24" width="112" height="42" rx="9" fill="#0077CC"/>
+      <text x="992"  y="50" fill="#ffffff">Kafka</text>
+    </g>
+    <g>
+      <rect x="1150" y="24" width="130" height="42" rx="9" fill="#0077CC"/>
+      <text x="1215" y="50" fill="#ffffff">WebSocket</text>
+    </g>
+  </g>
+
+  <!-- Messages -->
+  <g font-size="13.5" fill="#0f172a" text-anchor="middle">
+
+    <!-- 1 -->
+    <line x1="80" y1="112" x2="304" y2="112" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="192" y="104">Écrit et envoie un message</text>
+    <circle cx="80" cy="112" r="10" fill="#F26A21"/><text x="80" y="116" fill="#fff" font-size="12" font-weight="700">1</text>
+
+    <!-- 2 -->
+    <line x1="308" y1="168" x2="528" y2="168" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="418" y="160">Envoie le message (avec token JWT)</text>
+    <circle cx="308" cy="168" r="10" fill="#F26A21"/><text x="308" y="172" fill="#fff" font-size="12" font-weight="700">2</text>
+
+    <!-- 3 self -->
+    <path d="M543,214 h56 v34 h-56" fill="none" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="700" y="226" text-anchor="start">Vérifie l'auteur (JWT) et qu'il n'est pas banni</text>
+    <circle cx="536" cy="214" r="10" fill="#F26A21"/><text x="536" y="218" fill="#fff" font-size="12" font-weight="700">3</text>
+
+    <!-- 4 -->
+    <line x1="543" y1="298" x2="760" y2="298" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="652" y="290">Enregistre le message</text>
+    <circle cx="536" cy="298" r="10" fill="#F26A21"/><text x="536" y="302" fill="#fff" font-size="12" font-weight="700">4</text>
+
+    <!-- 5 return -->
+    <line x1="764" y1="340" x2="546" y2="340" stroke="#64748b" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+    <text x="655" y="332" fill="#475569">Message enregistré</text>
+
+    <!-- 6 -->
+    <line x1="543" y1="396" x2="988" y2="396" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="765" y="388">Publie l'événement « nouveau message »</text>
+    <circle cx="536" cy="396" r="10" fill="#F26A21"/><text x="536" y="400" fill="#fff" font-size="12" font-weight="700">5</text>
+
+    <!-- 7 -->
+    <line x1="543" y1="452" x2="1216" y2="452" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="880" y="444">Diffuse le message aux participants</text>
+    <circle cx="536" cy="452" r="10" fill="#F26A21"/><text x="536" y="456" fill="#fff" font-size="12" font-weight="700">6</text>
+
+    <!-- 8 broadcast to user -->
+    <line x1="1220" y1="508" x2="84" y2="508" stroke="#F26A21" stroke-width="2" marker-end="url(#arrowO)"/>
+    <text x="650" y="500" fill="#F26A21" font-weight="600">Nouveau message affiché en temps réel</text>
+    <circle cx="1220" cy="508" r="10" fill="#F26A21"/><text x="1220" y="512" fill="#fff" font-size="12" font-weight="700">7</text>
+
+    <!-- 9 confirmation -->
+    <line x1="529" y1="560" x2="312" y2="560" stroke="#64748b" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+    <text x="420" y="552" fill="#475569">Confirmation : « message publié »</text>
+  </g>
+
+  <!-- Footer participant markers -->
+  <g font-size="12.5" font-weight="600" text-anchor="middle" fill="#64748b">
+    <text x="80"   y="622">Utilisateur</text>
+    <text x="308"  y="622">Application Web</text>
+    <text x="536"  y="622">Service Livestream</text>
+    <text x="764"  y="622">PostgreSQL</text>
+    <text x="992"  y="622">Kafka</text>
+    <text x="1215" y="622">WebSocket</text>
+  </g>
+</svg>
