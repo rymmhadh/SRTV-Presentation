@@ -4,60 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    /* ═══════════════════════════════════════════════════════════
-       JENKINS OVERLAY – step system
-       First → : show overlay
-       Second → : navigate to next slide
-       ═══════════════════════════════════════════════════════════ */
-    const overlay   = document.getElementById('jenkins-overlay');
-    const thumb     = document.getElementById('jenkins-thumb');
-    const closeBtn  = document.getElementById('jenkins-close');
-    let   overlayOpen = false;
-
-    function openOverlay() {
-        overlayOpen = true;
-        overlay.classList.add('is-open');
-    }
-    function closeOverlay() {
-        overlayOpen = false;
-        overlay.classList.remove('is-open');
-    }
-
-    thumb.addEventListener('click', openOverlay);
-    closeBtn.addEventListener('click', closeOverlay);
-    overlay.querySelector('.jenkins-overlay__backdrop').addEventListener('click', closeOverlay);
-
-    /* Intercept nav.js keyboard BEFORE it handles it */
-    document.addEventListener('keydown', function (e) {
-        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-
-        if (e.key === 'Escape' && overlayOpen) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            closeOverlay();
-            return;
-        }
-
-        /* Right/Space/Down: first press opens overlay, second press navigates */
-        if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
-            if (!overlayOpen) {
-                e.preventDefault();
-                e.stopImmediatePropagation();
-                openOverlay();
-                return;
-            }
-            /* overlay is open → let nav.js handle next navigation */
-            closeOverlay();
-            /* fall through to nav.js */
-        }
-
-        /* Left/Up: close overlay if open, otherwise nav.js handles it */
-        if ((e.key === 'ArrowLeft' || e.key === 'ArrowUp') && overlayOpen) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            closeOverlay();
-        }
-    }, true); /* capture phase – fires before nav.js listener */
 
     /* ═══════════════════════════════════════════════════════════
        ENTRANCE SEQUENCE
