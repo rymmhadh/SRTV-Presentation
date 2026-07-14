@@ -226,3 +226,37 @@ html, body {
     font-weight: 700 !important;
     line-height: 1.1 !important;
 }
+
+/* --- QR code plateforme (page Merci) --- */
+.merci-qr {
+    margin-top: 1.8rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(17, 17, 17, 0.08);
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: box-shadow 0.25s ease;
+}
+.merci-qr:hover { box-shadow: 0 16px 40px rgba(242,106,33,0.18); }
+.merci-qr__img {
+    width: 128px;
+    height: 128px;
+    display: block;
+    border-radius: 10px;
+    background: #fff;
+    padding: 5px;
+}
+.merci-qr__caption {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #f26a21;
+}

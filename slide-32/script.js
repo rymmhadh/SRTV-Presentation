@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const subtitle   = document.querySelector('.merci-subtitle');
     const divider    = document.querySelector('.merci-divider');
     const info       = document.querySelector('.merci-info');
+    const qr         = document.querySelector('.merci-qr');
     const nav        = document.querySelector('.navigation');
 
     const setTransition = (el, props, delay) => {
@@ -167,7 +168,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setTransition(info,
         'opacity 0.6s ease, transform 0.6s ease', 1400);
 
-    // 6. Footer
+    // 6. QR code
+    if (qr) setTransition(qr,
+        'opacity 0.6s ease, transform 0.6s ease', 1700);
+
+    // 7. Footer
     setTransition(nav,
-        'opacity 0.8s ease, transform 0.8s ease', 1900);
+        'opacity 0.8s ease, transform 0.8s ease', 2100);
 });
